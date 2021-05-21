@@ -46,6 +46,7 @@ public class HelloController {
     //string 형식 -> StringConverter -> str 반환
     //기본 문자처리: StringHttpMessageConverter
     //기본 객체처리: MappingJackson2HttpMessageConverter
+
     static class Hello {
         private String name;
 
