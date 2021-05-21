@@ -32,5 +32,30 @@ public class HelloController {
         // 이후 페이지 소스보기를 하게 되면 html 코드들이 보이지 않고, return 값만 보이게 된다.
         // hello-mvc와 차이점.
     }
+
+    @GetMapping("hello-api")
+    @ResponseBody
+    public Hello helloApi(@RequestParam("name") String name) {
+        Hello hello = new Hello();
+        hello.setName(name);
+        return hello;
+    }
+    //@ResponseBody를 통해 viewResolver대신 HttpMessageConverter가 동작
+    //HttpMessageConverter에서 넘어오는 데이터 유형을 파악
+    //객체 형식 -> jsonConverter -> json 반환
+    //string 형식 -> StringConverter -> str 반환
+    //기본 문자처리: StringHttpMessageConverter
+    //기본 객체처리: MappingJackson2HttpMessageConverter
+    static class Hello {
+        private String name;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+    }
 }
 
