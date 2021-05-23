@@ -5,7 +5,7 @@ import spring.springstudy.domain.Member;
 
 import java.util.*;
 
-@Repository // 스프링 컨테이너가 레파지토리임을 알 수 있게 annotation 해준다.
+// @Repository // 스프링 컨테이너가 레파지토리임을 알 수 있게 annotation 해준다.
 // 구현체 생성
 public class MemoryMemberRepository implements MemberRepository {
 
