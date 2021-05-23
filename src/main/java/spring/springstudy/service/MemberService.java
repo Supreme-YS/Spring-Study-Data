@@ -1,5 +1,8 @@
 package spring.springstudy.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import spring.springstudy.domain.Member;
 import spring.springstudy.repository.MemberRepository;
 import spring.springstudy.repository.MemoryMemberRepository;
@@ -7,10 +10,15 @@ import spring.springstudy.repository.MemoryMemberRepository;
 import java.util.List;
 import java.util.Optional;
 
+@Service // @Autowired와 연결 , 스프링 컨테이너에 서비스로 등록
+         // @Service, Repository, Controller 안에 @Component라는 Annotation이 있다.
+         // 그래서 Component Scan 이라는 용어를 쓴다.
+
 public class MemberService {
 
     private final MemberRepository memberRepository;
 
+    @Autowired // MemberService를 Spring이 생성할 때 '너는 MemberRepository가 필요하구나'해서 스프링 컨테이너에 있는 MemberRepository를 넣어준다.
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
