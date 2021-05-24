@@ -30,7 +30,7 @@ public class MemoryMemberRepository implements MemberRepository {
         return store.values().stream() // 루프를 돌면서
                 .filter(member -> member.getName().equals(name)) // 필터링을 통해 같은 값만을
                 .findAny(); // 하나라도 찾아서 반환하고, null 이어도 optional이기 떄문에 괜찮다.
-        }
+    }
 
     @Override
     public List<Member> findAll() {
