@@ -12,6 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @SpringBootTest
 @Transactional // db 에 넣었던 데이터가 반영이 되지 않고, 깔끔하게 지워준다.
+               // 테스트 반복을 유용하게 해주는 어노테이션
 public class MemberServiceIntegrationTest {
 
     @Autowired MemberService memberService;
