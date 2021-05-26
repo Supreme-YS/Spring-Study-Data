@@ -1,7 +1,7 @@
 package spring.springstudy.repository;
 
+import org.springframework.jdbc.datasource.DataSourceUtils;
 import spring.springstudy.domain.Member;
-
 import javax.sql.DataSource;
 import java.sql.*;
 import java.util.ArrayList;
@@ -9,23 +9,17 @@ import java.util.List;
 import java.util.Optional;
 
 public class JdbcMemberRepository implements MemberRepository {
-    // 스프링이 데이터 소스를 만들고
-    private final DataSource dataSource;
 
-    // 나중에 데이터를 주입받기 위한 틀을 만든 것
+    private final DataSource dataSource;
     public JdbcMemberRepository(DataSource dataSource) {
         this.dataSource = dataSource;
-//        dataSource.getConnection(); 소켓에 연결되는 부분
     }
-
     @Override
     public Member save(Member member) {
         String sql = "insert into member(name) values(?)";
-
         Connection conn = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
-
         try {
             conn = getConnection();
             pstmt = conn.prepareStatement(sql,
@@ -48,23 +42,15 @@ public class JdbcMemberRepository implements MemberRepository {
 
     @Override
     public Optional<Member> findById(long id) {
-        return Optional.empty();
-    }
-
-    @Override
-    public Optional<Member> findById(Long id) {
         String sql = "select * from member where id = ?";
-
         Connection conn = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
-
         try {
             conn = getConnection();
             pstmt = conn.prepareStatement(sql);
             pstmt.setLong(1, id);
             rs = pstmt.executeQuery();
-
             if (rs.next()) {
                 Member member = new Member();
                 member.setId(rs.getLong("id"));
@@ -73,31 +59,6 @@ public class JdbcMemberRepository implements MemberRepository {
             } else {
                 return Optional.empty();
             }
-        } catch (Exception e) {
-            throw new IllegalStateException(e);
-        } finally {
-            close(conn, pstmt, rs);
-        }
-    }
-
-    @Override
-    public List<Member> findAll() {
-        String sql = "select * from member";
-        Connection conn = null;
-        PreparedStatement pstmt = null;
-        ResultSet rs = null;
-        try {
-            conn = getConnection();
-            pstmt = conn.prepareStatement(sql);
-            rs = pstmt.executeQuery();
-            List<Member> members = new ArrayList<>();
-            while (rs.next()) {
-                Member member = new Member();
-                member.setId(rs.getLong("id"));
-                member.setName(rs.getString("name"));
-                members.add(member);
-            }
-            return members;
         } catch (Exception e) {
             throw new IllegalStateException(e);
         } finally {
@@ -134,7 +95,7 @@ public class JdbcMemberRepository implements MemberRepository {
         return DataSourceUtils.getConnection(dataSource);
     }
 
-    private void close(Connection conn, PreparedStatement pstmt, ResultSet rs) {
+    private void close(Connection conn, PreparedStatement pstmt, ResultSet rs){
         try {
             if (rs != null) {
                 rs.close();
@@ -160,5 +121,30 @@ public class JdbcMemberRepository implements MemberRepository {
 
     private void close(Connection conn) throws SQLException {
         DataSourceUtils.releaseConnection(conn, dataSource);
+    }
+
+    @Override
+    public List<Member> findAll() {
+        String sql = "select * from member";
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        try {
+            conn = getConnection();
+            pstmt = conn.prepareStatement(sql);
+            rs = pstmt.executeQuery();
+            List<Member> members = new ArrayList<>();
+            while (rs.next()) {
+                Member member = new Member();
+                member.setId(rs.getLong("id"));
+                member.setName(rs.getString("name"));
+                members.add(member);
+            }
+            return members;
+        } catch (Exception e) {
+            throw new IllegalStateException(e);
+        } finally {
+            close(conn, pstmt, rs);
+        }
     }
 }
