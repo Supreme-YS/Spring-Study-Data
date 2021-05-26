@@ -1,14 +1,13 @@
 package spring.springstudy.service;
 
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import spring.springstudy.domain.Member;
 import spring.springstudy.repository.MemoryMemberRepository;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class MemberServiceTest {
 
@@ -25,7 +24,6 @@ class MemberServiceTest {
     public void afterEach() {
         memberRepository.clearStore();
     }
-
 
     @Test
     void 회원가입() {
