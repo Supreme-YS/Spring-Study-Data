@@ -30,9 +30,18 @@ public class MemberService {
         //    throw new IllegalStateException("이미 존재하는 회원입니다.");
         // });
         // 로직이 있는 경우엔 아래처럼 메서드로 추출하는게 낫다. 따라서 control + t -> method 로 extract!
-        validateDuplicateMember(member); // 중복 회원 검증
-        memberRepository.save(member);
-        return member.getId();
+
+        long start = System.currentTimeMillis();
+
+        try {
+            validateDuplicateMember(member); // 중복 회원 검증
+            memberRepository.save(member);
+            return member.getId();
+        } finally {
+            long finish = System.currentTimeMillis();
+            long timeMs = finish - start;
+            System.out.println("join = " + timeMs + "ms");
+        }
     }
 
     private void validateDuplicateMember(Member member) {
