@@ -1,11 +1,9 @@
 package spring.springstudy.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import spring.springstudy.domain.Member;
 import spring.springstudy.repository.MemberRepository;
-import spring.springstudy.repository.MemoryMemberRepository;
 
 import java.util.List;
 import java.util.Optional;
@@ -14,6 +12,7 @@ import java.util.Optional;
          // @Service, Repository, Controller 안에 @Component라는 Annotation이 있다.
          // 그래서 Component Scan 이라는 용어를 쓴다.
 
+@Transactional
 public class MemberService {
 
     private final MemberRepository memberRepository;
