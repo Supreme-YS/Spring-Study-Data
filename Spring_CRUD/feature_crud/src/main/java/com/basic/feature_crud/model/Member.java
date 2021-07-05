@@ -21,7 +21,7 @@ public class Member {
     private String firstName;
     private String lastName;
 
-    // 회원 상태를 알려주는 Enumerated
+    // 회원 상태를 알려주는 @Enumerated
     @Enumerated(EnumType.STRING)
     private MemberStatus status;
 

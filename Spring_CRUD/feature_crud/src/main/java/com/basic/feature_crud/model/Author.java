@@ -30,8 +30,8 @@ public class Author {
     private String firstName;
     private String lastName;
 
-
-    @JsonBackReference
+    // 저자와 도서는 1:N 관계, 한 저자는 여러개의 책을 쓸 수 있기 때문이다.
+    @JsonBackReference // 순환참조를 방어하기 위한 어노테이션
     @OneToMany(mappedBy = "author", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Book> books;
 }
