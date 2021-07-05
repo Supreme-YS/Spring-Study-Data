@@ -10,8 +10,6 @@ import javax.persistence.CascadeType;
 import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 
-// 저자와 도서는 1:N 관계, 한 저자는 여러개의 책을 쓸 수 있기 때문이다.
-
 import javax.persistence.*;
 import java.util.List;
 
@@ -19,9 +17,6 @@ import java.util.List;
 @Setter
 @Entity
 @Table(name = "author")
-
-
-
 
 public class Author {
     @Id

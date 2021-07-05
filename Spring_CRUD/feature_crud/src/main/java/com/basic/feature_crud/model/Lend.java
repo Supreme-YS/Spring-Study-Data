@@ -1,6 +1,6 @@
 package com.basic.feature_crud.model;
 
-// 대출
+// 대출정보
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Getter;
