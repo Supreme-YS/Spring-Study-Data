@@ -1,9 +1,7 @@
 package com.supreme.book.springboot.web;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import com.supreme.book.springboot.web.dto.HelloResponseDto;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class HelloController {
@@ -17,4 +15,10 @@ public class HelloController {
     // 예전 방법
     @RequestMapping(value = "/hello2",method = RequestMethod.GET)
     public String hello2() { return "hello2";}
+    @GetMapping("/hello/dto")
+    // @RequestParam : 외부에서 API로 넘긴 파라미터를 가져오는 어노테이션
+    public HelloResponseDto helloDto(@RequestParam("name") String name,
+                                     @RequestParam("amount") int amount) {
+        return new HelloResponseDto(name, amount);
+    }
 }
