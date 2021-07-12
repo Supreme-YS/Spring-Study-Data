@@ -29,4 +29,14 @@ public class HelloControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(content().string(hello));
     }
+
+    // 두 번째 테스트 코드
+    @Test
+    public void hello2가_리턴된다() throws Exception {
+        String hello2 = "hello2";
+
+        mvc.perform(get("/hello2"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(hello2));
+    }
 }
