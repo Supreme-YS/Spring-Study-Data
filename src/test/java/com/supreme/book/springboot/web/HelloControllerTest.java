@@ -24,6 +24,7 @@ public class HelloControllerTest {
     public void hello가_리턴된다() throws Exception {
         String hello = "hello";
 
+        // 코드 체이닝을 통한 연속 검증
         mvc.perform(get("/hello"))
                 .andExpect(status().isOk())
                 .andExpect(content().string(hello));
