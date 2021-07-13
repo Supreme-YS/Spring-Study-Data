@@ -40,13 +40,14 @@ public class HelloControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(content().string(hello2));
     }
+
     @Test
     public void helloDto가_리턴된다() throws Exception {
         String name = "hello";
         int amount = 1000;
 
-        mvc.perform(
-                get("/hello/dto"))
-
+        mvc.perform(get("/hello/dto"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(name));
     }
 }
