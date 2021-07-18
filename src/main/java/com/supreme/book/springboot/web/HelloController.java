@@ -15,6 +15,7 @@ public class HelloController {
     // 예전 방법
     @RequestMapping(value = "/hello2",method = RequestMethod.GET)
     public String hello2() { return "hello2";}
+
     @GetMapping("/hello/dto")
     // @RequestParam : 외부에서 API로 넘긴 파라미터를 가져오는 어노테이션
     public HelloResponseDto helloDto(@RequestParam("name") String name,

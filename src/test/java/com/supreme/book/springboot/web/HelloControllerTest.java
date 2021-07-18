@@ -42,11 +42,13 @@ public class HelloControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(content().string(hello2));
     }
+
     @Test
     public void helloDto가_리턴된다() throws Exception {
         String name = "hello";
         int amount = 1000;
 
+<<<<<<< HEAD
         mvc.perform(
                 get("/hello/dto")
                         .param("name", name)
@@ -54,5 +56,10 @@ public class HelloControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.name", is(name)))
                 .andExpect(jsonPath("$.amount", is(amount)));
+=======
+        mvc.perform(get("/hello/dto"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(name));
+>>>>>>> origin/master
     }
 }
