@@ -29,8 +29,8 @@ public class HelloControllerTest {
 
         // 코드 체이닝을 통한 연속 검증
         mvc.perform(get("/hello")) // MockMVC를 통해 /hello 주소로 HTTP GET 요청을 함, 체이닝이 지원되어 여러개 검증 가능
-                .andExpect(status().isOk())
-                .andExpect(content().string(hello));
+                .andExpect(status().isOk()) // mvc.perform의 결과를 검증 , 200/404/500등의 상태 검증, OK는 200인지 검증
+                .andExpect(content().string(hello)); // HelloController에서 hello를 반환하기 때문에 이 값이 맞는지 검증
     }
 
     // 두 번째 테스트 코드
@@ -55,8 +55,5 @@ public class HelloControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.name", is(name)))
                 .andExpect(jsonPath("$.amount", is(amount)));
-        mvc.perform(get("/hello/dto"))
-                .andExpect(status().isOk())
-                .andExpect(content().string(name));
     }
 }
