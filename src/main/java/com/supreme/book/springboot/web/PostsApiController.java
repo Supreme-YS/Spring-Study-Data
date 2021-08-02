@@ -1,6 +1,4 @@
 package com.supreme.book.springboot.web;
-
-
 import com.supreme.book.springboot.service.posts.PostsService;
 import com.supreme.book.springboot.web.dto.PostsResponseDto;
 import com.supreme.book.springboot.web.dto.PostsSaveRequestDto;
@@ -16,7 +14,6 @@ public class PostsApiController {
 
     @PostMapping("api/v1/posts")
     public Long save(@RequestBody PostsSaveRequestDto requestDto) {
-
         return postsService.save(requestDto);
     }
 
