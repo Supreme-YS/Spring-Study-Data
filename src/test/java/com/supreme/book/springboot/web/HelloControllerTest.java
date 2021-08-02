@@ -28,7 +28,7 @@ public class HelloControllerTest {
         String hello = "hello";
 
         // 코드 체이닝을 통한 연속 검증
-        mvc.perform(get("/hello"))
+        mvc.perform(get("/hello")) // MockMVC를 통해 /hello 주소로 HTTP GET 요청을 함, 체이닝이 지원되어 여러개 검증 가능
                 .andExpect(status().isOk())
                 .andExpect(content().string(hello));
     }
