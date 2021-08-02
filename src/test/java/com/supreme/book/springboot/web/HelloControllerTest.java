@@ -20,8 +20,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WebMvcTest(controllers = HelloController.class)
 public class HelloControllerTest {
 
-    @Autowired
-    private MockMvc mvc;
+    @Autowired // 스프링이 관리하는 빈(Bean)을 주입 받는다.
+    private MockMvc mvc; // 웹 API를 테스트할 때 사용, 스프링 MVC 테스트의 시작점, 이 클래스를 통해 HTTP GET, POST등에 대한 API 테스트 가능
 
     @Test
     public void hello가_리턴된다() throws Exception {
