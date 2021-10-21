@@ -1,2 +1,0 @@
-com/modoostudy/community/CommunityApplication.java
- com.modoostudy.community.CommunityApplication
