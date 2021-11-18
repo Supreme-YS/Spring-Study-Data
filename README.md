@@ -1,2 +1,2 @@
 ### Spring-Inflearn
-🏆김영한 스프링 
+🏆 스프링 백엔드 MVC
