@@ -12,7 +12,12 @@ import hello.core.member.MemberServiceImpl;
 public class MemberApp {
 
     public static void main(String[] args) {
-        MemberService memberService = new MemberServiceImpl();
+
+        AppConfig appConfig = new AppConfig();
+        MemberService memberService = appConfig.memberService();
+        //MemberServiceImpl을 만들고 내가 만든 MemberServiceImpl은
+        //MemoryMemberRepository를 만들어서 사용할거다. 라는 값을 memberService에 주입!
+//        MemberService memberService = new MemberServiceImpl();
 
         Member member = new Member(1L, "memberA", Grade.VIP);
         memberService.join(member);
