@@ -27,24 +27,39 @@ public class AppConfig {
     //두 번이 호출 되었네? 싱글톤 깨진거 아니냐..? --> 테스트 코드로 실험해보자
     //MemberServiceImpl.class 파일의 디버그를 찍어보자.
 
+    //예상 출력 순서 - 출력 순서는 보장하지 않지만, 종류와 수는 보장된다.
+    //call AppConfig.memberService
+    //call AppConfig.memberRepository
+    //call AppConfig.memberRepository
+    //call AppConfig.orderService
+    //call AppConfig.memberRepository
+
+    //실제 출력 순서 - 모두 한 번씩만 출력이 되었다.
+    //call AppConfig.memberService
+    //call AppConfig.memberRepository
+    //call AppConfig.orderService
+
     @Bean
     public MemberService memberService() {
+        System.out.println("call AppConfig.memberService");
         return new MemberServiceImpl(memberRepository());
     }
 
     @Bean
     public MemberRepository memberRepository() {
+        System.out.println("call AppConfig.memberRepository");
         return new MemoryMemberRepository();
     }
 
     @Bean
     public OrderService orderService() {
+        System.out.println("call AppConfig.orderService");
         return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
 
     @Bean
     public DiscountPolicy discountPolicy() {
-//        return new FixDiscountPolicy();
+        //return new FixDiscountPolicy();
         return new RateDiscountPolicy(); // 정률 할인 정책으로 변경
     }
 }
