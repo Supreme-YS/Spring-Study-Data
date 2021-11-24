@@ -21,6 +21,12 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class AppConfig {
 
+    // 싱글톤
+    //@Bean memberService -> new MemoryMemberRepository()
+    //@Bean orderService -> new MemoryMemberRepository()
+    //두 번이 호출 되었네? 싱글톤 깨진거 아니냐..? --> 테스트 코드로 실험해보자
+    //MemberServiceImpl.class 파일의 디버그를 찍어보자.
+
     @Bean
     public MemberService memberService() {
         return new MemberServiceImpl(memberRepository());

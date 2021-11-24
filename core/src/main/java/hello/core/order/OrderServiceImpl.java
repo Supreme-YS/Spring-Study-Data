@@ -33,4 +33,9 @@ public class OrderServiceImpl implements OrderService {
         // 새로 생성된 주문 객체를 만들어서 반환!
         return new Order(memberId, itemName, itemPrice, discountPrice);
     }
+
+    // 싱글톤 테스트 용도
+    public MemberRepository getMemberRepository() {
+        return memberRepository;
+    }
 }
