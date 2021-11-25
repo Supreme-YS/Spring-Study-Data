@@ -16,10 +16,11 @@ import org.springframework.context.annotation.FilterType;
 )
 public class AutoAppConfig {
 
-    @Bean(name = "memoryMemberRepository") // 첫 글자가 소문자가 되니까!
-    MemberRepository memberRepository() {
-        return new MemoryMemberRepository();
-    }
+    // BeanConflictException error용 코드!
+    //@Bean(name = "memoryMemberRepository") // 첫 글자가 소문자가 되니까!
+    //MemberRepository memberRepository() {
+    //    return new MemoryMemberRepository();
+    //}
 
     /*
     * The bean 'memoryMemberRepository', defined in class path resource [hello/core/AutoAppConfig.class], could not be registered. A bean with that name has already been defined in file [/Users/supreme-ys/study/spring/spring-inflearn/core/out/production/classes/hello/core/member/MemoryMemberRepository.class] and overriding is disabled.

@@ -19,12 +19,11 @@ public class OrderServiceImpl implements OrderService {
     // 오로지 인터페이스에만 의존하게끔 설정해준다.
     // 그런데 구현체가 없는데 어떻게 실행함..? 안됨 --> Null Pointer Exception이 터짐
     // 따라서, 어느 누군가가 DiscountPolicy의 구현 객체를 대신 생성하고 주입해주어야 함.
-
-
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
+
     // 생성자 주입
-    @Autowired
+    @Autowired // 생성자가 딱 1개 이므로 생략이 가능하다.
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
