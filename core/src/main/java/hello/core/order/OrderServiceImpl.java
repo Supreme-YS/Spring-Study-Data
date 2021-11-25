@@ -6,7 +6,10 @@ import hello.core.discount.RateDiscountPolicy;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;
 import hello.core.member.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class OrderServiceImpl implements OrderService {
     // private final MemberRepository memberRepository = new MemoryMemberRepository();
     // 아래 두 줄의 코드는 현재 DIP를 위반한 코드이다. 추상과 구현 둘 다 의존하고 있기 때문.
@@ -17,9 +20,11 @@ public class OrderServiceImpl implements OrderService {
     // 그런데 구현체가 없는데 어떻게 실행함..? 안됨 --> Null Pointer Exception이 터짐
     // 따라서, 어느 누군가가 DiscountPolicy의 구현 객체를 대신 생성하고 주입해주어야 함.
 
-    // 생성자 주입
+
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
+    // 생성자 주입
+    @Autowired
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;

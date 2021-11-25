@@ -1,11 +1,14 @@
 package hello.core.member;
 
+import org.springframework.stereotype.Component;
+
 import java.util.HashMap;
 import java.util.Map;
 
 /**
  * 원래는 분리하는게 낫지만, 편의상 같은 member 패키지 안에 생성
  */
+@Component
 public class MemoryMemberRepository implements MemberRepository {
 
     // 저장소를 위한 Map
