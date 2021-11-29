@@ -1,5 +1,6 @@
 package hello.core.order;
 
+import hello.core.annotation.MainDiscountPolicy;
 import hello.core.discount.DiscountPolicy;
 import hello.core.discount.FixDiscountPolicy;
 import hello.core.discount.RateDiscountPolicy;
@@ -11,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-@RequiredArgsConstructor // lombok의 기능, final이 붙은 객체를 파라미터로 받는 생성자를 자동으로 생성해주는 어노테이션
+//@RequiredArgsConstructor // lombok의 기능, final이 붙은 객체를 파라미터로 받는 생성자를 자동으로 생성해주는 어노테이션
 public class OrderServiceImpl implements OrderService {
     // private final MemberRepository memberRepository = new MemoryMemberRepository();
     // 아래 두 줄의 코드는 현재 DIP를 위반한 코드이다. 추상과 구현 둘 다 의존하고 있기 때문.
@@ -24,12 +25,12 @@ public class OrderServiceImpl implements OrderService {
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
 
-    // 생성자 주입
-    //@Autowired // 생성자가 딱 1개 이므로 생략이 가능하다.
-    //public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
-    //    this.memberRepository = memberRepository;
-    //    this.discountPolicy = discountPolicy;
-    //}
+    //생성자 주입
+    @Autowired // 생성자가 딱 1개 이므로 생략이 가능하다.
+    public OrderServiceImpl(MemberRepository memberRepository, @MainDiscountPolicy DiscountPolicy discountPolicy) {
+        this.memberRepository = memberRepository;
+        this.discountPolicy = discountPolicy;
+    }
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
