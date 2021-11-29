@@ -19,7 +19,7 @@ public class AutowiredTest {
     static class TestBean {
 
         @Autowired(required = false)
-        public void setNoBean1(Member noBean1) {
+        public void setNoBean1(Member noBean1) { // Member는 스프링 빈이 아님
             // 스프링 관련 없는 것을 넣음
             System.out.println("noBean1 = " + noBean1);
         } // 호출안됨
