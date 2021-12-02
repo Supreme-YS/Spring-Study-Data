@@ -41,12 +41,13 @@ public class AccountService implements UserDetailsService {
     private final TemplateEngine templateEngine;
     private final AppProperties appProperties;
 
+    // 새로운 계정을 생성한다.
     public Account processNewAccount(SignUpForm signUpForm) {
-        Account newAccount = saveNewAccount(signUpForm);
-        sendSignUpConfirmEmail(newAccount);
-        return newAccount;
+        Account newAccount = saveNewAccount(signUpForm); // 저장된 계정을 newAccount 변수에 담는다.
+        sendSignUpConfirmEmail(newAccount); // 확인 이메일을 보낸다.
+        return newAccount; // newAccount를 리턴한다.
     }
-
+    // 저장을 한다.
     private Account saveNewAccount(@Valid SignUpForm signUpForm) {
         signUpForm.setPassword(passwordEncoder.encode(signUpForm.getPassword()));
         Account account = modelMapper.map(signUpForm, Account.class);
@@ -73,6 +74,7 @@ public class AccountService implements UserDetailsService {
         //emailService.sendEmail(emailMessage);
     }
 
+    // 로그인한다.
     public void login(Account account) {
         UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(
                 new UserAccount(account),
@@ -83,12 +85,15 @@ public class AccountService implements UserDetailsService {
 
     @Transactional(readOnly = true)
     @Override
+    // UserDetails는 spring.security의 인터페이스
     public UserDetails loadUserByUsername(String emailOrNickname) throws UsernameNotFoundException {
+        // Account.class 타입의 accountRepository의 저장소에서 이메일로 찾는다.
         Account account = accountRepository.findByEmail(emailOrNickname);
+        // 못찾으면 닉네임으로 찾는다.
         if (account == null) {
             account = accountRepository.findByNickname(emailOrNickname);
         }
-
+        // 그래도 못찾으면
         if (account == null) {
             throw new UsernameNotFoundException(emailOrNickname);
         }

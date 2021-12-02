@@ -46,6 +46,7 @@ public class AccountController {
     public String checkEmailToken(String token, String email, Model model) {
         Account account = accountRepository.findByEmail(email);
         String view = "account/checked-email";
+
         if (account == null) {
             model.addAttribute("error", "wrong.email");
             return view;
