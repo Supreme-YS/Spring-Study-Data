@@ -1,0 +1,804 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/supreme-ys/study/spring/studyolle/src/main/resources/static/node/node',
+1 verbose cli   '/Users/supreme-ys/study/spring/studyolle/src/main/resources/static/node/node_modules/npm/bin/npm-cli.js',
+1 verbose cli   'install' ]
+2 info using npm@2.15.9
+3 info using node@v4.6.0
+4 verbose readDependencies loading dependencies from /Users/supreme-ys/study/spring/studyolle/src/main/resources/static/package.json
+5 warn package.json static@1.0.0 No description
+6 warn package.json static@1.0.0 No repository field.
+7 warn package.json static@1.0.0 No README data
+8 verbose install where, deps [ '/Users/supreme-ys/study/spring/studyolle/src/main/resources/static',
+8 verbose install   [ '@yaireo/tagify',
+8 verbose install     'bootstrap',
+8 verbose install     'cropper',
+8 verbose install     'font-awesome',
+8 verbose install     'jdenticon',
+8 verbose install     'jquery',
+8 verbose install     'jquery-cropper',
+8 verbose install     'mark.js',
+8 verbose install     'moment',
+8 verbose install     'summernote' ] ]
+9 verbose install where, peers [ '/Users/supreme-ys/study/spring/studyolle/src/main/resources/static',
+9 verbose install   [] ]
+10 verbose installManyTop reading for lifecycle /Users/supreme-ys/study/spring/studyolle/src/main/resources/static/package.json
+11 info preinstall static@1.0.0
+12 verbose installManyTop reading scoped package data from /Users/supreme-ys/study/spring/studyolle/src/main/resources/static/node_modules/bootstrap/package.json
+13 verbose installManyTop reading scoped package data from /Users/supreme-ys/study/spring/studyolle/src/main/resources/static/node_modules/cropper/package.json
+14 verbose installManyTop reading scoped package data from /Users/supreme-ys/study/spring/studyolle/src/main/resources/static/node_modules/cropperjs/package.json
+15 verbose installManyTop reading scoped package data from /Users/supreme-ys/study/spring/studyolle/src/main/resources/static/node_modules/font-awesome/package.json
+16 verbose installManyTop reading scoped package data from /Users/supreme-ys/study/spring/studyolle/src/main/resources/static/node_modules/jdenticon/package.json
+17 verbose installManyTop reading scoped package data from /Users/supreme-ys/study/spring/studyolle/src/main/resources/static/node_modules/jquery/package.json
+18 verbose installManyTop reading scoped package data from /Users/supreme-ys/study/spring/studyolle/src/main/resources/static/node_modules/jquery-cropper/package.json
+19 verbose installManyTop reading scoped package data from /Users/supreme-ys/study/spring/studyolle/src/main/resources/static/node_modules/mark.js/package.json
+20 verbose installManyTop reading scoped package data from /Users/supreme-ys/study/spring/studyolle/src/main/resources/static/node_modules/moment/package.json
+21 verbose installManyTop reading scoped package data from /Users/supreme-ys/study/spring/studyolle/src/main/resources/static/node_modules/popper.js/package.json
+22 verbose installManyTop reading scoped package data from /Users/supreme-ys/study/spring/studyolle/src/main/resources/static/node_modules/prop-types/package.json
+23 verbose installManyTop reading scoped package data from /Users/supreme-ys/study/spring/studyolle/src/main/resources/static/node_modules/@yaireo/tagify/package.json
+24 verbose readDependencies loading dependencies from /Users/supreme-ys/study/spring/studyolle/src/main/resources/static/package.json
+25 verbose targetResolver reading package data from /Users/supreme-ys/study/spring/studyolle/src/main/resources/static/node_modules/bootstrap/package.json
+26 verbose targetResolver reading package data from /Users/supreme-ys/study/spring/studyolle/src/main/resources/static/node_modules/cropper/package.json
+27 verbose targetResolver reading package data from /Users/supreme-ys/study/spring/studyolle/src/main/resources/static/node_modules/cropperjs/package.json
+28 verbose targetResolver reading package data from /Users/supreme-ys/study/spring/studyolle/src/main/resources/static/node_modules/font-awesome/package.json
+29 verbose targetResolver reading package data from /Users/supreme-ys/study/spring/studyolle/src/main/resources/static/node_modules/jdenticon/package.json
+30 verbose targetResolver reading package data from /Users/supreme-ys/study/spring/studyolle/src/main/resources/static/node_modules/jquery/package.json
+31 verbose targetResolver reading package data from /Users/supreme-ys/study/spring/studyolle/src/main/resources/static/node_modules/jquery-cropper/package.json
+32 verbose targetResolver reading package data from /Users/supreme-ys/study/spring/studyolle/src/main/resources/static/node_modules/mark.js/package.json
+33 verbose targetResolver reading package data from /Users/supreme-ys/study/spring/studyolle/src/main/resources/static/node_modules/moment/package.json
+34 verbose targetResolver reading package data from /Users/supreme-ys/study/spring/studyolle/src/main/resources/static/node_modules/popper.js/package.json
+35 verbose targetResolver reading package data from /Users/supreme-ys/study/spring/studyolle/src/main/resources/static/node_modules/prop-types/package.json
+36 verbose targetResolver reading package data from /Users/supreme-ys/study/spring/studyolle/src/main/resources/static/node_modules/.bin/jdenticon/package.json
+37 verbose targetResolver reading package data from /Users/supreme-ys/study/spring/studyolle/src/main/resources/static/node_modules/@yaireo/tagify/package.json
+38 verbose already installed skipping moment@^2.24.0 /Users/supreme-ys/study/spring/studyolle/src/main/resources/static
+39 silly cache add args [ 'summernote@^0.8.16', null ]
+40 verbose cache add spec summernote@^0.8.16
+41 silly cache add parsed spec Result {
+41 silly cache add   raw: 'summernote@^0.8.16',
+41 silly cache add   scope: null,
+41 silly cache add   name: 'summernote',
+41 silly cache add   rawSpec: '^0.8.16',
+41 silly cache add   spec: '>=0.8.16 <0.9.0',
+41 silly cache add   type: 'range' }
+42 silly addNamed summernote@>=0.8.16 <0.9.0
+43 verbose addNamed ">=0.8.16 <0.9.0" is a valid semver range for summernote
+44 silly addNameRange { name: 'summernote', range: '>=0.8.16 <0.9.0', hasData: false }
+45 silly mapToRegistry name summernote
+46 silly mapToRegistry using default registry
+47 silly mapToRegistry registry https://registry.npmjs.org/
+48 silly mapToRegistry data Result {
+48 silly mapToRegistry   raw: 'summernote',
+48 silly mapToRegistry   scope: null,
+48 silly mapToRegistry   name: 'summernote',
+48 silly mapToRegistry   rawSpec: '',
+48 silly mapToRegistry   spec: 'latest',
+48 silly mapToRegistry   type: 'tag' }
+49 silly mapToRegistry uri https://registry.npmjs.org/summernote
+50 verbose addNameRange registry:https://registry.npmjs.org/summernote not in flight; fetching
+51 verbose already installed skipping @yaireo/tagify@^3.5.1 /Users/supreme-ys/study/spring/studyolle/src/main/resources/static
+52 verbose already installed skipping bootstrap@^4.4.1 /Users/supreme-ys/study/spring/studyolle/src/main/resources/static
+53 verbose already installed skipping cropper@^4.1.0 /Users/supreme-ys/study/spring/studyolle/src/main/resources/static
+54 verbose already installed skipping font-awesome@^4.7.0 /Users/supreme-ys/study/spring/studyolle/src/main/resources/static
+55 verbose already installed skipping jdenticon@^2.2.0 /Users/supreme-ys/study/spring/studyolle/src/main/resources/static
+56 verbose already installed skipping jquery@^3.4.1 /Users/supreme-ys/study/spring/studyolle/src/main/resources/static
+57 verbose already installed skipping jquery-cropper@^1.0.1 /Users/supreme-ys/study/spring/studyolle/src/main/resources/static
+58 verbose already installed skipping mark.js@^8.11.1 /Users/supreme-ys/study/spring/studyolle/src/main/resources/static
+59 verbose request uri https://registry.npmjs.org/summernote
+60 verbose request no auth needed
+61 info attempt registry request try #1 at 10:45:27 AM
+62 verbose request id e4bb8524b1362438
+63 verbose etag W/"15cc0048194283f5b3ec18e08a985400"
+64 verbose lastModified Thu, 14 Oct 2021 21:17:28 GMT
+65 http request GET https://registry.npmjs.org/summernote
+66 http 304 https://registry.npmjs.org/summernote
+67 verbose headers { date: 'Thu, 02 Dec 2021 01:45:28 GMT',
+67 verbose headers   connection: 'keep-alive',
+67 verbose headers   'cf-ray': '6b70e03b6dc86194-ICN',
+67 verbose headers   'cache-control': 'public, max-age=300',
+67 verbose headers   etag: '"15cc0048194283f5b3ec18e08a985400"',
+67 verbose headers   'last-modified': 'Thu, 14 Oct 2021 21:17:28 GMT',
+67 verbose headers   vary: 'Accept-Encoding',
+67 verbose headers   'cf-cache-status': 'REVALIDATED',
+67 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+67 verbose headers   'x-amz-replication-status': 'COMPLETED',
+67 verbose headers   server: 'cloudflare' }
+68 silly get cb [ 304,
+68 silly get   { date: 'Thu, 02 Dec 2021 01:45:28 GMT',
+68 silly get     connection: 'keep-alive',
+68 silly get     'cf-ray': '6b70e03b6dc86194-ICN',
+68 silly get     'cache-control': 'public, max-age=300',
+68 silly get     etag: '"15cc0048194283f5b3ec18e08a985400"',
+68 silly get     'last-modified': 'Thu, 14 Oct 2021 21:17:28 GMT',
+68 silly get     vary: 'Accept-Encoding',
+68 silly get     'cf-cache-status': 'REVALIDATED',
+68 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+68 silly get     'x-amz-replication-status': 'COMPLETED',
+68 silly get     server: 'cloudflare' } ]
+69 verbose etag https://registry.npmjs.org/summernote from cache
+70 verbose get saving summernote to /Users/supreme-ys/.npm/registry.npmjs.org/summernote/.cache.json
+71 verbose correctMkdir /Users/supreme-ys/.npm correctMkdir not in flight; initializing
+72 silly addNameRange number 2 { name: 'summernote', range: '>=0.8.16 <0.9.0', hasData: true }
+73 silly addNameRange versions [ 'summernote',
+73 silly addNameRange   [ '0.5.9',
+73 silly addNameRange     '0.6.0-ga',
+73 silly addNameRange     '0.6.1',
+73 silly addNameRange     '0.6.5',
+73 silly addNameRange     '0.6.6',
+73 silly addNameRange     '0.6.7',
+73 silly addNameRange     '0.6.8',
+73 silly addNameRange     '0.6.9',
+73 silly addNameRange     '0.6.10',
+73 silly addNameRange     '0.6.11',
+73 silly addNameRange     '0.6.12',
+73 silly addNameRange     '0.6.13',
+73 silly addNameRange     '0.6.14',
+73 silly addNameRange     '0.6.15',
+73 silly addNameRange     '0.6.16',
+73 silly addNameRange     '0.7.0',
+73 silly addNameRange     '0.7.1',
+73 silly addNameRange     '0.7.2',
+73 silly addNameRange     '0.7.3',
+73 silly addNameRange     '0.8.0',
+73 silly addNameRange     '0.8.1',
+73 silly addNameRange     '0.8.2',
+73 silly addNameRange     '0.8.3',
+73 silly addNameRange     '0.8.4',
+73 silly addNameRange     '0.8.5',
+73 silly addNameRange     '0.8.6',
+73 silly addNameRange     '0.8.7',
+73 silly addNameRange     '0.8.8',
+73 silly addNameRange     '0.8.9',
+73 silly addNameRange     '0.8.10',
+73 silly addNameRange     '0.8.11',
+73 silly addNameRange     '0.8.12',
+73 silly addNameRange     '0.8.13',
+73 silly addNameRange     '0.8.14',
+73 silly addNameRange     '0.8.15',
+73 silly addNameRange     '0.8.16',
+73 silly addNameRange     '0.8.17',
+73 silly addNameRange     '0.8.18',
+73 silly addNameRange     '0.8.19',
+73 silly addNameRange     '0.8.20' ] ]
+74 silly addNamed summernote@0.8.20
+75 verbose addNamed "0.8.20" is a plain semver version for summernote
+76 silly cache afterAdd summernote@0.8.20
+77 verbose afterAdd /Users/supreme-ys/.npm/summernote/0.8.20/package/package.json not in flight; writing
+78 verbose correctMkdir /Users/supreme-ys/.npm correctMkdir not in flight; initializing
+79 verbose afterAdd /Users/supreme-ys/.npm/summernote/0.8.20/package/package.json written
+80 silly install resolved [ { name: 'summernote',
+80 silly install resolved     description: 'Super simple WYSIWYG editor',
+80 silly install resolved     version: '0.8.20',
+80 silly install resolved     license: 'MIT',
+80 silly install resolved     keywords: [ 'editor', 'WYSIWYG' ],
+80 silly install resolved     repository:
+80 silly install resolved      { type: 'git',
+80 silly install resolved        url: 'git+https://github.com/summernote/summernote.git' },
+80 silly install resolved     author: { name: 'hackerwins', email: '<susukang98@gmail.com' },
+80 silly install resolved     main: 'dist/summernote.js',
+80 silly install resolved     scripts:
+80 silly install resolved      { dev: 'eslint config && webpack serve --config=./config/webpack.development.js --progress',
+80 silly install resolved        prebuild: 'node ./config/build-fonts.js',
+80 silly install resolved        build: 'webpack --node-env production --mode=production --config=./config/webpack.production.js --progress',
+80 silly install resolved        lint: 'eslint src plugin test config',
+80 silly install resolved        test: 'karma start .karma/config.js --single-run',
+80 silly install resolved        'test:grep': 'karma run .karma/config.js -- --grep',
+80 silly install resolved        'test:watch': 'karma start .karma/config.js',
+80 silly install resolved        'test:travis': 'karma start .karma/travis.js --single-run',
+80 silly install resolved        'test:sauce': 'karma start .karma/saucelabs.js --single-run',
+80 silly install resolved        'test:debug': 'karma start .karma/debug.js',
+80 silly install resolved        postinstall: 'husky install',
+80 silly install resolved        prepublishOnly: 'pinst --disable',
+80 silly install resolved        postpublish: 'pinst --enable' },
+80 silly install resolved     husky: { hooks: [Object] },
+80 silly install resolved     devDependencies:
+80 silly install resolved      { '@babel/core': '^7.9.0',
+80 silly install resolved        '@babel/eslint-parser': '^7.12.16',
+80 silly install resolved        '@babel/plugin-external-helpers': '^7.8.3',
+80 silly install resolved        '@babel/preset-env': '^7.9.5',
+80 silly install resolved        '@popperjs/core': '^2.9.2',
+80 silly install resolved        autoprefixer: '^10.2.4',
+80 silly install resolved        'babel-loader': '^8.1.0',
+80 silly install resolved        'babel-plugin-module-resolver': '^4.0.0',
+80 silly install resolved        bootstrap: '^5.0.1',
+80 silly install resolved        chai: '^4.2.0',
+80 silly install resolved        'chai-spies': '^1.0.0',
+80 silly install resolved        chromedriver: '^93.0.1',
+80 silly install resolved        'clean-webpack-plugin': '^4.0.0-alpha.0',
+80 silly install resolved        concurrently: '^6.2.0',
+80 silly install resolved        'copy-webpack-plugin': '^9.0.1',
+80 silly install resolved        'css-loader': '^6.2.0',
+80 silly install resolved        'css-minimizer-webpack-plugin': '^3.0.1',
+80 silly install resolved        cssnano: '^5.0.6',
+80 silly install resolved        eslint: '^7.19.0',
+80 silly install resolved        'eslint-config-standard': '^16.0.2',
+80 silly install resolved        'eslint-plugin-chai-friendly': '^0.7.1',
+80 silly install resolved        'eslint-plugin-import': '^2.20.2',
+80 silly install resolved        'eslint-plugin-node': '^11.1.0',
+80 silly install resolved        'eslint-plugin-promise': '^5.1.0',
+80 silly install resolved        'eslint-webpack-plugin': '^3.0.1',
+80 silly install resolved        'file-loader': '^6.0.0',
+80 silly install resolved        'html-loader': '^2.1.2',
+80 silly install resolved        'html-webpack-plugin': '^5.3.2',
+80 silly install resolved        husky: '^7.0.2',
+80 silly install resolved        jquery: '^3.6.0',
+80 silly install resolved        karma: '^6.1.0',
+80 silly install resolved        'karma-chrome-launcher': '^3.1.0',
+80 silly install resolved        'karma-coverage': '^2.0.2',
+80 silly install resolved        'karma-coveralls': '^2.1.0',
+80 silly install resolved        'karma-detect-browsers': '^2.3.3',
+80 silly install resolved        'karma-firefox-launcher': '^2.1.0',
+80 silly install resolved        'karma-ie-launcher': '^1.0.0',
+80 silly install resolved        'karma-mocha': '^2.0.0',
+80 silly install resolved        'karma-opera-launcher': '^1.0.0',
+80 silly install resolved        'karma-safari-launcher': '^1.0.0',
+80 silly install resolved        'karma-sauce-launcher': '^4.3.6',
+80 silly install resolved        'karma-webpack': '^5.0.0',
+80 silly install resolved        less: '^4.1.1',
+80 silly install resolved        'less-loader': '^10.0.0',
+80 silly install resolved        'mini-css-extract-plugin': '^2.3.0',
+80 silly install resolved        mocha: '^9.0.1',
+80 silly install resolved        pinst: '^2.1.4',
+80 silly install resolved        postcss: '^8.2.6',
+80 silly install resolved        'postcss-escape-generated-content-string': '^3.0.0',
+80 silly install resolved        'postcss-loader': '^6.1.0',
+80 silly install resolved        'resolve-url-loader': '^4.0.0',
+80 silly install resolved        sass: '^1.26.3',
+80 silly install resolved        'sass-loader': '^12.1.0',
+80 silly install resolved        'serve-static': '^1.14.1',
+80 silly install resolved        'string-replace-loader': '^3.0.1',
+80 silly install resolved        'style-loader': '^3.2.1',
+80 silly install resolved        'terser-webpack-plugin': '^5.1.1',
+80 silly install resolved        'uglify-js': '^3.9.1',
+80 silly install resolved        'url-loader': '^4.1.0',
+80 silly install resolved        webfont: '^11.1.1',
+80 silly install resolved        webpack: '^5.40.0',
+80 silly install resolved        'webpack-bundle-analyzer': '^4.4.0',
+80 silly install resolved        'webpack-cli': '^4.5.0',
+80 silly install resolved        'webpack-dev-server': '^4.3.0',
+80 silly install resolved        'zip-webpack-plugin': '^4.0.1' },
+80 silly install resolved     licenseText: 'The MIT License (MIT)\n\nCopyright (c) 2015~ Summernote Team (https://github.com/orgs/summernote/people)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the "Software"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n',
+80 silly install resolved     _id: 'summernote@0.8.20',
+80 silly install resolved     dist:
+80 silly install resolved      { shasum: '395905f2cec0aceebc712edc019d91b8ef88f7cf',
+80 silly install resolved        integrity: 'sha512-W9RhjQjsn+b1s9xiJQgJbCiYGJaDAc9CdEqXo+D13WuStG8lCdtKaO5AiNiSSMJsQJN2EfGSwbBQt+SFE2B8Kw==',
+80 silly install resolved        tarball: 'https://registry.npmjs.org/summernote/-/summernote-0.8.20.tgz',
+80 silly install resolved        fileCount: 455,
+80 silly install resolved        unpackedSize: 8055837 },
+80 silly install resolved     _npmUser: { name: 'lqez', email: 'ez.amiryo@gmail.com' },
+80 silly install resolved     directories: {},
+80 silly install resolved     maintainers: [ [Object], [Object], [Object] ],
+80 silly install resolved     _npmOperationalInternal:
+80 silly install resolved      { host: 's3://npm-registry-packages',
+80 silly install resolved        tmp: 'tmp/summernote_0.8.20_1634246247020_0.3651347245562713' },
+80 silly install resolved     _hasShrinkwrap: false,
+80 silly install resolved     _shasum: '395905f2cec0aceebc712edc019d91b8ef88f7cf',
+80 silly install resolved     _resolved: 'https://registry.npmjs.org/summernote/-/summernote-0.8.20.tgz',
+80 silly install resolved     _from: 'summernote@>=0.8.16 <0.9.0',
+80 silly install resolved     bugs: { url: 'https://github.com/summernote/summernote/issues' },
+80 silly install resolved     readme: 'ERROR: No README data found!',
+80 silly install resolved     homepage: 'https://github.com/summernote/summernote#readme' } ]
+81 info install summernote@0.8.20 into /Users/supreme-ys/study/spring/studyolle/src/main/resources/static
+82 info installOne summernote@0.8.20
+83 verbose installOne of summernote to /Users/supreme-ys/study/spring/studyolle/src/main/resources/static not in flight; installing
+84 verbose correctMkdir /Users/supreme-ys/.npm/_locks correctMkdir not in flight; initializing
+85 verbose lock using /Users/supreme-ys/.npm/_locks/summernote-ed082bd3518580dc.lock for /Users/supreme-ys/study/spring/studyolle/src/main/resources/static/node_modules/summernote
+86 silly install write writing summernote 0.8.20 to /Users/supreme-ys/study/spring/studyolle/src/main/resources/static/node_modules/summernote
+87 verbose unbuild node_modules/summernote
+88 silly gentlyRm /Users/supreme-ys/study/spring/studyolle/src/main/resources/static/node_modules/summernote is being purged from base /Users/supreme-ys/study/spring/studyolle/src/main/resources/static
+89 verbose gentlyRm don't care about contents; nuking /Users/supreme-ys/study/spring/studyolle/src/main/resources/static/node_modules/summernote
+90 verbose tar unpack /Users/supreme-ys/.npm/summernote/0.8.20/package.tgz
+91 verbose tar unpacking to /Users/supreme-ys/study/spring/studyolle/src/main/resources/static/node_modules/summernote
+92 silly gentlyRm /Users/supreme-ys/study/spring/studyolle/src/main/resources/static/node_modules/summernote is being purged
+93 verbose gentlyRm don't care about contents; nuking /Users/supreme-ys/study/spring/studyolle/src/main/resources/static/node_modules/summernote
+94 silly gunzTarPerm modes [ '755', '644' ]
+95 silly gunzTarPerm extractEntry
+96 silly gunzTarPerm extractEntry .babelrc
+97 silly gunzTarPerm extractEntry .editorconfig
+98 silly gunzTarPerm extractEntry .envrc
+99 silly gunzTarPerm extractEntry .eslintrc
+100 silly gunzTarPerm extractEntry .github
+101 silly gunzTarPerm extractEntry .husky
+102 silly gunzTarPerm extractEntry .karma
+103 silly gunzTarPerm extractEntry CHANGES.md
+104 silly gunzTarPerm extractEntry LICENSE
+105 silly gunzTarPerm extractEntry README.md
+106 silly gunzTarPerm extractEntry config
+107 silly gunzTarPerm extractEntry dist
+108 silly gunzTarPerm extractEntry examples
+109 silly gunzTarPerm extractEntry package.json
+110 silly gunzTarPerm extractEntry plugin
+111 silly gunzTarPerm extractEntry src
+112 silly gunzTarPerm extractEntry .github/CODE_OF_CONDUCT.md
+113 silly gunzTarPerm extractEntry .github/CONTRIBUTING.md
+114 silly gunzTarPerm extractEntry .github/FUNDING.yml
+115 silly gunzTarPerm extractEntry .github/ISSUE_TEMPLATE.md
+116 silly gunzTarPerm extractEntry .github/PULL_REQUEST_TEMPLATE.md
+117 silly gunzTarPerm extractEntry .github/workflows
+118 silly gunzTarPerm extractEntry .husky/pre-commit
+119 silly gunzTarPerm extractEntry .husky/pre-push
+120 silly gunzTarPerm extractEntry .karma/config.js
+121 silly gunzTarPerm extractEntry .karma/debug.js
+122 silly gunzTarPerm extractEntry .karma/saucelabs.js
+123 silly gunzTarPerm extractEntry .karma/travis.js
+124 silly gunzTarPerm extractEntry config/build-fonts.js
+125 silly gunzTarPerm extractEntry config/common.js
+126 silly gunzTarPerm extractEntry config/webpack.development.js
+127 silly gunzTarPerm extractEntry config/webpack.karma.js
+128 silly gunzTarPerm extractEntry config/webpack.production.js
+129 silly gunzTarPerm extractEntry dist/font
+130 silly gunzTarPerm extractEntry dist/lang
+131 silly gunzTarPerm extractEntry dist/plugin
+132 silly gunzTarPerm extractEntry dist/summernote-0.8.20-dist.zip
+133 silly gunzTarPerm extractEntry dist/summernote-bs4.css
+134 silly gunzTarPerm extractEntry dist/summernote-bs4.css.map
+135 silly gunzTarPerm extractEntry dist/summernote-bs4.js
+136 silly gunzTarPerm extractEntry dist/summernote-bs4.js.map
+137 silly gunzTarPerm extractEntry dist/summernote-bs4.min.css
+138 silly gunzTarPerm extractEntry dist/summernote-bs4.min.js
+139 silly gunzTarPerm extractEntry dist/summernote-bs5.css
+140 silly gunzTarPerm extractEntry dist/summernote-bs5.css.map
+141 silly gunzTarPerm extractEntry dist/summernote-bs5.js
+142 silly gunzTarPerm extractEntry dist/summernote-bs5.js.map
+143 silly gunzTarPerm extractEntry dist/summernote-bs5.min.css
+144 silly gunzTarPerm extractEntry dist/summernote-bs5.min.js
+145 silly gunzTarPerm extractEntry dist/summernote-lite.css
+146 silly gunzTarPerm extractEntry dist/summernote-lite.css.map
+147 silly gunzTarPerm extractEntry dist/summernote-lite.js
+148 silly gunzTarPerm extractEntry dist/summernote-lite.js.map
+149 silly gunzTarPerm extractEntry dist/summernote-lite.min.css
+150 silly gunzTarPerm extractEntry dist/summernote-lite.min.js
+151 silly gunzTarPerm extractEntry dist/summernote.css
+152 silly gunzTarPerm extractEntry dist/summernote.css.map
+153 silly gunzTarPerm extractEntry dist/summernote.js
+154 silly gunzTarPerm extractEntry dist/summernote.js.map
+155 silly gunzTarPerm extractEntry dist/summernote.min.css
+156 silly gunzTarPerm extractEntry dist/summernote.min.js
+157 silly gunzTarPerm extractEntry examples/README.md
+158 silly gunzTarPerm extractEntry examples/airmode.html
+159 silly gunzTarPerm extractEntry examples/codemirror.html
+160 silly gunzTarPerm extractEntry examples/custom-style.html
+161 silly gunzTarPerm extractEntry examples/example.css
+162 silly gunzTarPerm extractEntry examples/external-api.html
+163 silly gunzTarPerm extractEntry examples/external-codemirror.html
+164 silly gunzTarPerm extractEntry examples/hint-emoji.html
+165 silly gunzTarPerm extractEntry examples/hint-math.html
+166 silly gunzTarPerm extractEntry examples/hint-userdefine.html
+167 silly gunzTarPerm extractEntry examples/hint-words.html
+168 silly gunzTarPerm extractEntry examples/history-limit.html
+169 silly gunzTarPerm extractEntry examples/index.template
+170 silly gunzTarPerm extractEntry examples/jquery-custom-event.html
+171 silly gunzTarPerm extractEntry examples/lang.html
+172 silly gunzTarPerm extractEntry examples/link-blank.html
+173 silly gunzTarPerm extractEntry examples/mode-switcher.html
+174 silly gunzTarPerm extractEntry examples/ondialog-multitab.html
+175 silly gunzTarPerm extractEntry examples/ondialog.html
+176 silly gunzTarPerm extractEntry examples/placeholder.html
+177 silly gunzTarPerm extractEntry examples/plugin-hello.html
+178 silly gunzTarPerm extractEntry examples/recordEveryKeyStroke.html
+179 silly gunzTarPerm extractEntry examples/symbols_mathematical-symbols_Greek-letters.json
+180 silly gunzTarPerm extractEntry examples/textarea.html
+181 silly gunzTarPerm extractEntry examples/toolbar-container.html
+182 silly gunzTarPerm extractEntry examples/with-google-font.html
+183 silly gunzTarPerm extractEntry plugin/databasic
+184 silly gunzTarPerm extractEntry plugin/hello
+185 silly gunzTarPerm extractEntry plugin/specialchars
+186 silly gunzTarPerm extractEntry src/font
+187 silly gunzTarPerm extractEntry src/js
+188 silly gunzTarPerm extractEntry src/lang
+189 silly gunzTarPerm extractEntry src/styles
+190 silly gunzTarPerm extractEntry .github/workflows/codeql-analysis.yml
+191 silly gunzTarPerm extractEntry dist/font/summernote.eot
+192 silly gunzTarPerm extractEntry dist/font/summernote.hash
+193 silly gunzTarPerm extractEntry dist/font/summernote.ttf
+194 silly gunzTarPerm extractEntry dist/font/summernote.woff
+195 silly gunzTarPerm extractEntry dist/font/summernote.woff2
+196 silly gunzTarPerm extractEntry dist/lang/summernote-ar-AR.js
+197 silly gunzTarPerm extractEntry dist/lang/summernote-ar-AR.js.map
+198 silly gunzTarPerm extractEntry dist/lang/summernote-ar-AR.min.js
+199 silly gunzTarPerm extractEntry dist/lang/summernote-az-AZ.js
+200 silly gunzTarPerm extractEntry dist/lang/summernote-az-AZ.js.map
+201 silly gunzTarPerm extractEntry dist/lang/summernote-az-AZ.min.js
+202 silly gunzTarPerm extractEntry dist/lang/summernote-bg-BG.js
+203 silly gunzTarPerm extractEntry dist/lang/summernote-bg-BG.js.map
+204 silly gunzTarPerm extractEntry dist/lang/summernote-bg-BG.min.js
+205 silly gunzTarPerm extractEntry dist/lang/summernote-bn-BD.js
+206 silly gunzTarPerm extractEntry dist/lang/summernote-bn-BD.js.map
+207 silly gunzTarPerm extractEntry dist/lang/summernote-bn-BD.min.js
+208 silly gunzTarPerm extractEntry dist/lang/summernote-ca-ES.js
+209 silly gunzTarPerm extractEntry dist/lang/summernote-ca-ES.js.map
+210 silly gunzTarPerm extractEntry dist/lang/summernote-ca-ES.min.js
+211 silly gunzTarPerm extractEntry dist/lang/summernote-cs-CZ.js
+212 silly gunzTarPerm extractEntry dist/lang/summernote-cs-CZ.js.map
+213 silly gunzTarPerm extractEntry dist/lang/summernote-cs-CZ.min.js
+214 silly gunzTarPerm extractEntry dist/lang/summernote-da-DK.js
+215 silly gunzTarPerm extractEntry dist/lang/summernote-da-DK.js.map
+216 silly gunzTarPerm extractEntry dist/lang/summernote-da-DK.min.js
+217 silly gunzTarPerm extractEntry dist/lang/summernote-de-CH.js
+218 silly gunzTarPerm extractEntry dist/lang/summernote-de-CH.js.map
+219 silly gunzTarPerm extractEntry dist/lang/summernote-de-CH.min.js
+220 silly gunzTarPerm extractEntry dist/lang/summernote-de-DE.js
+221 silly gunzTarPerm extractEntry dist/lang/summernote-de-DE.js.map
+222 silly gunzTarPerm extractEntry dist/lang/summernote-de-DE.min.js
+223 silly gunzTarPerm extractEntry dist/lang/summernote-el-GR.js
+224 silly gunzTarPerm extractEntry dist/lang/summernote-el-GR.js.map
+225 silly gunzTarPerm extractEntry dist/lang/summernote-el-GR.min.js
+226 silly gunzTarPerm extractEntry dist/lang/summernote-en-US.js
+227 silly gunzTarPerm extractEntry dist/lang/summernote-en-US.js.map
+228 silly gunzTarPerm extractEntry dist/lang/summernote-en-US.min.js
+229 silly gunzTarPerm extractEntry dist/lang/summernote-es-ES.js
+230 silly gunzTarPerm extractEntry dist/lang/summernote-es-ES.js.map
+231 silly gunzTarPerm extractEntry dist/lang/summernote-es-ES.min.js
+232 silly gunzTarPerm extractEntry dist/lang/summernote-es-EU.js
+233 silly gunzTarPerm extractEntry dist/lang/summernote-es-EU.js.map
+234 silly gunzTarPerm extractEntry dist/lang/summernote-es-EU.min.js
+235 silly gunzTarPerm extractEntry dist/lang/summernote-fa-IR.js
+236 silly gunzTarPerm extractEntry dist/lang/summernote-fa-IR.js.map
+237 silly gunzTarPerm extractEntry dist/lang/summernote-fa-IR.min.js
+238 silly gunzTarPerm extractEntry dist/lang/summernote-fi-FI.js
+239 silly gunzTarPerm extractEntry dist/lang/summernote-fi-FI.js.map
+240 silly gunzTarPerm extractEntry dist/lang/summernote-fi-FI.min.js
+241 silly gunzTarPerm extractEntry dist/lang/summernote-fr-FR.js
+242 silly gunzTarPerm extractEntry dist/lang/summernote-fr-FR.js.map
+243 silly gunzTarPerm extractEntry dist/lang/summernote-fr-FR.min.js
+244 silly gunzTarPerm extractEntry dist/lang/summernote-gl-ES.js
+245 silly gunzTarPerm extractEntry dist/lang/summernote-gl-ES.js.map
+246 silly gunzTarPerm extractEntry dist/lang/summernote-gl-ES.min.js
+247 silly gunzTarPerm extractEntry dist/lang/summernote-he-IL.js
+248 silly gunzTarPerm extractEntry dist/lang/summernote-he-IL.js.map
+249 silly gunzTarPerm extractEntry dist/lang/summernote-he-IL.min.js
+250 silly gunzTarPerm extractEntry dist/lang/summernote-hr-HR.js
+251 silly gunzTarPerm extractEntry dist/lang/summernote-hr-HR.js.map
+252 silly gunzTarPerm extractEntry dist/lang/summernote-hr-HR.min.js
+253 silly gunzTarPerm extractEntry dist/lang/summernote-hu-HU.js
+254 silly gunzTarPerm extractEntry dist/lang/summernote-hu-HU.js.map
+255 silly gunzTarPerm extractEntry dist/lang/summernote-hu-HU.min.js
+256 silly gunzTarPerm extractEntry dist/lang/summernote-id-ID.js
+257 silly gunzTarPerm extractEntry dist/lang/summernote-id-ID.js.map
+258 silly gunzTarPerm extractEntry dist/lang/summernote-id-ID.min.js
+259 silly gunzTarPerm extractEntry dist/lang/summernote-it-IT.js
+260 silly gunzTarPerm extractEntry dist/lang/summernote-it-IT.js.map
+261 silly gunzTarPerm extractEntry dist/lang/summernote-it-IT.min.js
+262 silly gunzTarPerm extractEntry dist/lang/summernote-ja-JP.js
+263 silly gunzTarPerm extractEntry dist/lang/summernote-ja-JP.js.map
+264 silly gunzTarPerm extractEntry dist/lang/summernote-ja-JP.min.js
+265 silly gunzTarPerm extractEntry dist/lang/summernote-ko-KR.js
+266 silly gunzTarPerm extractEntry dist/lang/summernote-ko-KR.js.map
+267 silly gunzTarPerm extractEntry dist/lang/summernote-ko-KR.min.js
+268 silly gunzTarPerm extractEntry dist/lang/summernote-lt-LT.js
+269 silly gunzTarPerm extractEntry dist/lang/summernote-lt-LT.js.map
+270 silly gunzTarPerm extractEntry dist/lang/summernote-lt-LT.min.js
+271 silly gunzTarPerm extractEntry dist/lang/summernote-lt-LV.js
+272 silly gunzTarPerm extractEntry dist/lang/summernote-lt-LV.js.map
+273 silly gunzTarPerm extractEntry dist/lang/summernote-lt-LV.min.js
+274 silly gunzTarPerm extractEntry dist/lang/summernote-mn-MN.js
+275 silly gunzTarPerm extractEntry dist/lang/summernote-mn-MN.js.map
+276 silly gunzTarPerm extractEntry dist/lang/summernote-mn-MN.min.js
+277 silly gunzTarPerm extractEntry dist/lang/summernote-nb-NO.js
+278 silly gunzTarPerm extractEntry dist/lang/summernote-nb-NO.js.map
+279 silly gunzTarPerm extractEntry dist/lang/summernote-nb-NO.min.js
+280 silly gunzTarPerm extractEntry dist/lang/summernote-nl-NL.js
+281 silly gunzTarPerm extractEntry dist/lang/summernote-nl-NL.js.map
+282 silly gunzTarPerm extractEntry dist/lang/summernote-nl-NL.min.js
+283 silly gunzTarPerm extractEntry dist/lang/summernote-pl-PL.js
+284 silly gunzTarPerm extractEntry dist/lang/summernote-pl-PL.js.map
+285 silly gunzTarPerm extractEntry dist/lang/summernote-pl-PL.min.js
+286 silly gunzTarPerm extractEntry dist/lang/summernote-pt-BR.js
+287 silly gunzTarPerm extractEntry dist/lang/summernote-pt-BR.js.map
+288 silly gunzTarPerm extractEntry dist/lang/summernote-pt-BR.min.js
+289 silly gunzTarPerm extractEntry dist/lang/summernote-pt-PT.js
+290 silly gunzTarPerm extractEntry dist/lang/summernote-pt-PT.js.map
+291 silly gunzTarPerm extractEntry dist/lang/summernote-pt-PT.min.js
+292 silly gunzTarPerm extractEntry dist/lang/summernote-ro-RO.js
+293 silly gunzTarPerm extractEntry dist/lang/summernote-ro-RO.js.map
+294 silly gunzTarPerm extractEntry dist/lang/summernote-ro-RO.min.js
+295 silly gunzTarPerm extractEntry dist/lang/summernote-ru-RU.js
+296 silly gunzTarPerm extractEntry dist/lang/summernote-ru-RU.js.map
+297 silly gunzTarPerm extractEntry dist/lang/summernote-ru-RU.min.js
+298 silly gunzTarPerm extractEntry dist/lang/summernote-sk-SK.js
+299 silly gunzTarPerm extractEntry dist/lang/summernote-sk-SK.js.map
+300 silly gunzTarPerm extractEntry dist/lang/summernote-sk-SK.min.js
+301 silly gunzTarPerm extractEntry dist/lang/summernote-sl-SI.js
+302 silly gunzTarPerm extractEntry dist/lang/summernote-sl-SI.js.map
+303 silly gunzTarPerm extractEntry dist/lang/summernote-sl-SI.min.js
+304 silly gunzTarPerm extractEntry dist/lang/summernote-sr-RS-Latin.js
+305 silly gunzTarPerm extractEntry dist/lang/summernote-sr-RS-Latin.js.map
+306 silly gunzTarPerm extractEntry dist/lang/summernote-sr-RS-Latin.min.js
+307 silly gunzTarPerm extractEntry dist/lang/summernote-sr-RS.js
+308 silly gunzTarPerm extractEntry dist/lang/summernote-sr-RS.js.map
+309 silly gunzTarPerm extractEntry dist/lang/summernote-sr-RS.min.js
+310 silly gunzTarPerm extractEntry dist/lang/summernote-sv-SE.js
+311 silly gunzTarPerm extractEntry dist/lang/summernote-sv-SE.js.map
+312 silly gunzTarPerm extractEntry dist/lang/summernote-sv-SE.min.js
+313 silly gunzTarPerm extractEntry dist/lang/summernote-ta-IN.js
+314 silly gunzTarPerm extractEntry dist/lang/summernote-ta-IN.js.map
+315 silly gunzTarPerm extractEntry dist/lang/summernote-ta-IN.min.js
+316 silly gunzTarPerm extractEntry dist/lang/summernote-th-TH.js
+317 silly gunzTarPerm extractEntry dist/lang/summernote-th-TH.js.map
+318 silly gunzTarPerm extractEntry dist/lang/summernote-th-TH.min.js
+319 silly gunzTarPerm extractEntry dist/lang/summernote-tr-TR.js
+320 silly gunzTarPerm extractEntry dist/lang/summernote-tr-TR.js.map
+321 silly gunzTarPerm extractEntry dist/lang/summernote-tr-TR.min.js
+322 silly gunzTarPerm extractEntry dist/lang/summernote-uk-UA.js
+323 silly gunzTarPerm extractEntry dist/lang/summernote-uk-UA.js.map
+324 silly gunzTarPerm extractEntry dist/lang/summernote-uk-UA.min.js
+325 silly gunzTarPerm extractEntry dist/lang/summernote-uz-UZ.js
+326 silly gunzTarPerm extractEntry dist/lang/summernote-uz-UZ.js.map
+327 silly gunzTarPerm extractEntry dist/lang/summernote-uz-UZ.min.js
+328 silly gunzTarPerm extractEntry dist/lang/summernote-vi-VN.js
+329 silly gunzTarPerm extractEntry dist/lang/summernote-vi-VN.js.map
+330 silly gunzTarPerm extractEntry dist/lang/summernote-vi-VN.min.js
+331 silly gunzTarPerm extractEntry dist/lang/summernote-zh-CN.js
+332 silly gunzTarPerm extractEntry dist/lang/summernote-zh-CN.js.map
+333 silly gunzTarPerm extractEntry dist/lang/summernote-zh-CN.min.js
+334 silly gunzTarPerm extractEntry dist/lang/summernote-zh-TW.js
+335 silly gunzTarPerm extractEntry dist/lang/summernote-zh-TW.js.map
+336 silly gunzTarPerm extractEntry dist/lang/summernote-zh-TW.min.js
+337 silly gunzTarPerm extractEntry dist/plugin/databasic
+338 silly gunzTarPerm extractEntry dist/plugin/hello
+339 silly gunzTarPerm extractEntry dist/plugin/specialchars
+340 silly gunzTarPerm extractEntry plugin/databasic/summernote-ext-databasic.css
+341 silly gunzTarPerm extractEntry plugin/databasic/summernote-ext-databasic.js
+342 silly gunzTarPerm extractEntry plugin/hello/summernote-ext-hello.js
+343 silly gunzTarPerm extractEntry plugin/specialchars/summernote-ext-specialchars.js
+344 silly gunzTarPerm extractEntry src/font/icons
+345 silly gunzTarPerm extractEntry src/font/summernote.eot
+346 silly gunzTarPerm extractEntry src/font/summernote.hash
+347 silly gunzTarPerm extractEntry src/font/summernote.ttf
+348 silly gunzTarPerm extractEntry src/font/summernote.woff
+349 silly gunzTarPerm extractEntry src/font/summernote.woff2
+350 silly gunzTarPerm extractEntry src/font/template.scss
+351 silly gunzTarPerm extractEntry src/js/Context.js
+352 silly gunzTarPerm extractEntry src/js/core
+353 silly gunzTarPerm extractEntry src/js/editing
+354 silly gunzTarPerm extractEntry src/js/module
+355 silly gunzTarPerm extractEntry src/js/renderer.js
+356 silly gunzTarPerm extractEntry src/js/settings.js
+357 silly gunzTarPerm extractEntry src/js/summernote.js
+358 silly gunzTarPerm extractEntry src/lang/README.md
+359 silly gunzTarPerm extractEntry src/lang/summernote-ar-AR.js
+360 silly gunzTarPerm extractEntry src/lang/summernote-az-AZ.js
+361 silly gunzTarPerm extractEntry src/lang/summernote-bg-BG.js
+362 silly gunzTarPerm extractEntry src/lang/summernote-bn-BD.js
+363 silly gunzTarPerm extractEntry src/lang/summernote-ca-ES.js
+364 silly gunzTarPerm extractEntry src/lang/summernote-cs-CZ.js
+365 silly gunzTarPerm extractEntry src/lang/summernote-da-DK.js
+366 silly gunzTarPerm extractEntry src/lang/summernote-de-CH.js
+367 silly gunzTarPerm extractEntry src/lang/summernote-de-DE.js
+368 silly gunzTarPerm extractEntry src/lang/summernote-el-GR.js
+369 silly gunzTarPerm extractEntry src/lang/summernote-en-US.js
+370 silly gunzTarPerm extractEntry src/lang/summernote-es-ES.js
+371 silly gunzTarPerm extractEntry src/lang/summernote-es-EU.js
+372 silly gunzTarPerm extractEntry src/lang/summernote-fa-IR.js
+373 silly gunzTarPerm extractEntry src/lang/summernote-fi-FI.js
+374 silly gunzTarPerm extractEntry src/lang/summernote-fr-FR.js
+375 silly gunzTarPerm extractEntry src/lang/summernote-gl-ES.js
+376 silly gunzTarPerm extractEntry src/lang/summernote-he-IL.js
+377 silly gunzTarPerm extractEntry src/lang/summernote-hr-HR.js
+378 silly gunzTarPerm extractEntry src/lang/summernote-hu-HU.js
+379 silly gunzTarPerm extractEntry src/lang/summernote-id-ID.js
+380 silly gunzTarPerm extractEntry src/lang/summernote-it-IT.js
+381 silly gunzTarPerm extractEntry src/lang/summernote-ja-JP.js
+382 silly gunzTarPerm extractEntry src/lang/summernote-ko-KR.js
+383 silly gunzTarPerm extractEntry src/lang/summernote-lt-LT.js
+384 silly gunzTarPerm extractEntry src/lang/summernote-lt-LV.js
+385 silly gunzTarPerm extractEntry src/lang/summernote-mn-MN.js
+386 silly gunzTarPerm extractEntry src/lang/summernote-nb-NO.js
+387 silly gunzTarPerm extractEntry src/lang/summernote-nl-NL.js
+388 silly gunzTarPerm extractEntry src/lang/summernote-pl-PL.js
+389 silly gunzTarPerm extractEntry src/lang/summernote-pt-BR.js
+390 silly gunzTarPerm extractEntry src/lang/summernote-pt-PT.js
+391 silly gunzTarPerm extractEntry src/lang/summernote-ro-RO.js
+392 silly gunzTarPerm extractEntry src/lang/summernote-ru-RU.js
+393 silly gunzTarPerm extractEntry src/lang/summernote-sk-SK.js
+394 silly gunzTarPerm extractEntry src/lang/summernote-sl-SI.js
+395 silly gunzTarPerm extractEntry src/lang/summernote-sr-RS-Latin.js
+396 silly gunzTarPerm extractEntry src/lang/summernote-sr-RS.js
+397 silly gunzTarPerm extractEntry src/lang/summernote-sv-SE.js
+398 silly gunzTarPerm extractEntry src/lang/summernote-ta-IN.js
+399 silly gunzTarPerm extractEntry src/lang/summernote-th-TH.js
+400 silly gunzTarPerm extractEntry src/lang/summernote-tr-TR.js
+401 silly gunzTarPerm extractEntry src/lang/summernote-uk-UA.js
+402 silly gunzTarPerm extractEntry src/lang/summernote-uz-UZ.js
+403 silly gunzTarPerm extractEntry src/lang/summernote-vi-VN.js
+404 silly gunzTarPerm extractEntry src/lang/summernote-zh-CN.js
+405 silly gunzTarPerm extractEntry src/lang/summernote-zh-TW.js
+406 silly gunzTarPerm extractEntry src/styles/README.md
+407 silly gunzTarPerm extractEntry src/styles/bs3
+408 silly gunzTarPerm extractEntry src/styles/bs4
+409 silly gunzTarPerm extractEntry src/styles/bs5
+410 silly gunzTarPerm extractEntry src/styles/lite
+411 silly gunzTarPerm extractEntry src/styles/summernote
+412 silly gunzTarPerm extractEntry dist/plugin/databasic/summernote-ext-databasic.css
+413 silly gunzTarPerm extractEntry dist/plugin/databasic/summernote-ext-databasic.js
+414 silly gunzTarPerm extractEntry dist/plugin/hello/summernote-ext-hello.js
+415 silly gunzTarPerm extractEntry dist/plugin/specialchars/summernote-ext-specialchars.js
+416 silly gunzTarPerm extractEntry src/font/icons/align-center.svg
+417 silly gunzTarPerm extractEntry src/font/icons/align-indent.svg
+418 silly gunzTarPerm extractEntry src/font/icons/align-justify.svg
+419 silly gunzTarPerm extractEntry src/font/icons/align-left.svg
+420 silly gunzTarPerm extractEntry src/font/icons/align-outdent.svg
+421 silly gunzTarPerm extractEntry src/font/icons/align-right.svg
+422 silly gunzTarPerm extractEntry src/font/icons/align.svg
+423 silly gunzTarPerm extractEntry src/font/icons/arrow-circle-down.svg
+424 silly gunzTarPerm extractEntry src/font/icons/arrow-circle-left.svg
+425 silly gunzTarPerm extractEntry src/font/icons/arrow-circle-right.svg
+426 silly gunzTarPerm extractEntry src/font/icons/arrow-circle-up.svg
+427 silly gunzTarPerm extractEntry src/font/icons/arrows-alt.svg
+428 silly gunzTarPerm extractEntry src/font/icons/arrows-h.svg
+429 silly gunzTarPerm extractEntry src/font/icons/arrows-v.svg
+430 silly gunzTarPerm extractEntry src/font/icons/bold.svg
+431 silly gunzTarPerm extractEntry src/font/icons/caret.svg
+432 silly gunzTarPerm extractEntry src/font/icons/chain-broken.svg
+433 silly gunzTarPerm extractEntry src/font/icons/circle.svg
+434 silly gunzTarPerm extractEntry src/font/icons/close.svg
+435 silly gunzTarPerm extractEntry src/font/icons/code.svg
+436 silly gunzTarPerm extractEntry src/font/icons/col-after.svg
+437 silly gunzTarPerm extractEntry src/font/icons/col-before.svg
+438 silly gunzTarPerm extractEntry src/font/icons/col-remove.svg
+439 silly gunzTarPerm extractEntry src/font/icons/eraser.svg
+440 silly gunzTarPerm extractEntry src/font/icons/float-left.svg
+441 silly gunzTarPerm extractEntry src/font/icons/float-none.svg
+442 silly gunzTarPerm extractEntry src/font/icons/float-right.svg
+443 silly gunzTarPerm extractEntry src/font/icons/font.svg
+444 silly gunzTarPerm extractEntry src/font/icons/frame.svg
+445 silly gunzTarPerm extractEntry src/font/icons/italic.svg
+446 silly gunzTarPerm extractEntry src/font/icons/link.svg
+447 silly gunzTarPerm extractEntry src/font/icons/magic.svg
+448 silly gunzTarPerm extractEntry src/font/icons/menu-check.svg
+449 silly gunzTarPerm extractEntry src/font/icons/minus.svg
+450 silly gunzTarPerm extractEntry src/font/icons/orderedlist.svg
+451 silly gunzTarPerm extractEntry src/font/icons/pencil.svg
+452 silly gunzTarPerm extractEntry src/font/icons/picture.svg
+453 silly gunzTarPerm extractEntry src/font/icons/question.svg
+454 silly gunzTarPerm extractEntry src/font/icons/redo.svg
+455 silly gunzTarPerm extractEntry src/font/icons/rollback.svg
+456 silly gunzTarPerm extractEntry src/font/icons/row-above.svg
+457 silly gunzTarPerm extractEntry src/font/icons/row-below.svg
+458 silly gunzTarPerm extractEntry src/font/icons/row-remove.svg
+459 silly gunzTarPerm extractEntry src/font/icons/special-character.svg
+460 silly gunzTarPerm extractEntry src/font/icons/square.svg
+461 silly gunzTarPerm extractEntry src/font/icons/strikethrough.svg
+462 silly gunzTarPerm extractEntry src/font/icons/subscript.svg
+463 silly gunzTarPerm extractEntry src/font/icons/summernote.svg
+464 silly gunzTarPerm extractEntry src/font/icons/superscript.svg
+465 silly gunzTarPerm extractEntry src/font/icons/table.svg
+466 silly gunzTarPerm extractEntry src/font/icons/text-height.svg
+467 silly gunzTarPerm extractEntry src/font/icons/trash.svg
+468 silly gunzTarPerm extractEntry src/font/icons/underline.svg
+469 silly gunzTarPerm extractEntry src/font/icons/undo.svg
+470 silly gunzTarPerm extractEntry src/font/icons/unorderedlist.svg
+471 silly gunzTarPerm extractEntry src/font/icons/video.svg
+472 silly gunzTarPerm extractEntry src/js/core/async.js
+473 silly gunzTarPerm extractEntry src/js/core/dom.js
+474 silly gunzTarPerm extractEntry src/js/core/env.js
+475 silly gunzTarPerm extractEntry src/js/core/func.js
+476 silly gunzTarPerm extractEntry src/js/core/key.js
+477 silly gunzTarPerm extractEntry src/js/core/lists.js
+478 silly gunzTarPerm extractEntry src/js/core/range.js
+479 silly gunzTarPerm extractEntry src/js/editing/Bullet.js
+480 silly gunzTarPerm extractEntry src/js/editing/History.js
+481 silly gunzTarPerm extractEntry src/js/editing/Style.js
+482 silly gunzTarPerm extractEntry src/js/editing/Table.js
+483 silly gunzTarPerm extractEntry src/js/editing/Typing.js
+484 silly gunzTarPerm extractEntry src/js/module/AirPopover.js
+485 silly gunzTarPerm extractEntry src/js/module/AutoLink.js
+486 silly gunzTarPerm extractEntry src/js/module/AutoReplace.js
+487 silly gunzTarPerm extractEntry src/js/module/AutoSync.js
+488 silly gunzTarPerm extractEntry src/js/module/Buttons.js
+489 silly gunzTarPerm extractEntry src/js/module/Clipboard.js
+490 silly gunzTarPerm extractEntry src/js/module/Codeview.js
+491 silly gunzTarPerm extractEntry src/js/module/Dropzone.js
+492 silly gunzTarPerm extractEntry src/js/module/Editor.js
+493 silly gunzTarPerm extractEntry src/js/module/Fullscreen.js
+494 silly gunzTarPerm extractEntry src/js/module/Handle.js
+495 silly gunzTarPerm extractEntry src/js/module/HelpDialog.js
+496 silly gunzTarPerm extractEntry src/js/module/HintPopover.js
+497 silly gunzTarPerm extractEntry src/js/module/ImageDialog.js
+498 silly gunzTarPerm extractEntry src/js/module/ImagePopover.js
+499 silly gunzTarPerm extractEntry src/js/module/LinkDialog.js
+500 silly gunzTarPerm extractEntry src/js/module/LinkPopover.js
+501 silly gunzTarPerm extractEntry src/js/module/Placeholder.js
+502 silly gunzTarPerm extractEntry src/js/module/Statusbar.js
+503 silly gunzTarPerm extractEntry src/js/module/TablePopover.js
+504 silly gunzTarPerm extractEntry src/js/module/Toolbar.js
+505 silly gunzTarPerm extractEntry src/js/module/VideoDialog.js
+506 silly gunzTarPerm extractEntry src/styles/bs3/summernote-bs3.html
+507 silly gunzTarPerm extractEntry src/styles/bs3/summernote-bs3.js
+508 silly gunzTarPerm extractEntry src/styles/bs3/summernote-bs3.json
+509 silly gunzTarPerm extractEntry src/styles/bs3/summernote-bs3.scss
+510 silly gunzTarPerm extractEntry src/styles/bs4/summernote-bs4.html
+511 silly gunzTarPerm extractEntry src/styles/bs4/summernote-bs4.js
+512 silly gunzTarPerm extractEntry src/styles/bs4/summernote-bs4.json
+513 silly gunzTarPerm extractEntry src/styles/bs4/summernote-bs4.scss
+514 silly gunzTarPerm extractEntry src/styles/bs5/summernote-bs5.html
+515 silly gunzTarPerm extractEntry src/styles/bs5/summernote-bs5.js
+516 silly gunzTarPerm extractEntry src/styles/bs5/summernote-bs5.json
+517 silly gunzTarPerm extractEntry src/styles/bs5/summernote-bs5.scss
+518 silly gunzTarPerm extractEntry src/styles/lite/js
+519 silly gunzTarPerm extractEntry src/styles/lite/scss
+520 silly gunzTarPerm extractEntry src/styles/lite/summernote-lite.html
+521 silly gunzTarPerm extractEntry src/styles/lite/summernote-lite.js
+522 silly gunzTarPerm extractEntry src/styles/lite/summernote-lite.json
+523 silly gunzTarPerm extractEntry src/styles/lite/summernote-lite.scss
+524 silly gunzTarPerm extractEntry src/styles/summernote/README.md
+525 silly gunzTarPerm extractEntry src/styles/summernote/common.scss
+526 silly gunzTarPerm extractEntry src/styles/summernote/elements.scss
+527 silly gunzTarPerm extractEntry src/styles/summernote/font
+528 silly gunzTarPerm extractEntry src/styles/summernote/font.scss
+529 silly gunzTarPerm extractEntry src/styles/lite/js/DropdownUI.js
+530 silly gunzTarPerm extractEntry src/styles/lite/js/ModalUI.js
+531 silly gunzTarPerm extractEntry src/styles/lite/js/TooltipUI.js
+532 silly gunzTarPerm extractEntry src/styles/lite/scss/btn-group.scss
+533 silly gunzTarPerm extractEntry src/styles/lite/scss/buttons.scss
+534 silly gunzTarPerm extractEntry src/styles/lite/scss/common.scss
+535 silly gunzTarPerm extractEntry src/styles/lite/scss/dropdown.scss
+536 silly gunzTarPerm extractEntry src/styles/lite/scss/form.scss
+537 silly gunzTarPerm extractEntry src/styles/lite/scss/mixins
+538 silly gunzTarPerm extractEntry src/styles/lite/scss/mixins.scss
+539 silly gunzTarPerm extractEntry src/styles/lite/scss/modal.scss
+540 silly gunzTarPerm extractEntry src/styles/lite/scss/popover.scss
+541 silly gunzTarPerm extractEntry src/styles/lite/scss/toolbar.scss
+542 silly gunzTarPerm extractEntry src/styles/lite/scss/tooltip.scss
+543 silly gunzTarPerm extractEntry src/styles/lite/scss/variables.scss
+544 silly gunzTarPerm extractEntry src/styles/summernote/font/summernote.eot
+545 silly gunzTarPerm extractEntry src/styles/summernote/font/summernote.hash
+546 silly gunzTarPerm extractEntry src/styles/summernote/font/summernote.ttf
+547 silly gunzTarPerm extractEntry src/styles/summernote/font/summernote.woff
+548 silly gunzTarPerm extractEntry src/styles/summernote/font/summernote.woff2
+549 silly gunzTarPerm extractEntry src/styles/lite/scss/mixins/buttons.scss
+550 verbose write writing to /Users/supreme-ys/study/spring/studyolle/src/main/resources/static/node_modules/summernote/package.json
+551 info preinstall summernote@0.8.20
+552 verbose readDependencies loading dependencies from /Users/supreme-ys/study/spring/studyolle/src/main/resources/static/node_modules/summernote/package.json
+553 verbose readDependencies loading dependencies from /Users/supreme-ys/study/spring/studyolle/src/main/resources/static/node_modules/summernote/package.json
+554 silly install resolved []
+555 verbose about to build /Users/supreme-ys/study/spring/studyolle/src/main/resources/static/node_modules/summernote
+556 info build /Users/supreme-ys/study/spring/studyolle/src/main/resources/static/node_modules/summernote
+557 info linkStuff summernote@0.8.20
+558 silly linkStuff summernote@0.8.20 has /Users/supreme-ys/study/spring/studyolle/src/main/resources/static/node_modules as its parent node_modules
+559 verbose linkBins summernote@0.8.20
+560 verbose linkMans summernote@0.8.20
+561 verbose rebuildBundles summernote@0.8.20
+562 info install summernote@0.8.20
+563 info postinstall summernote@0.8.20
+564 verbose unsafe-perm in lifecycle true
+565 info summernote@0.8.20 Failed to exec postinstall script
+566 verbose unlock done using /Users/supreme-ys/.npm/_locks/summernote-ed082bd3518580dc.lock for /Users/supreme-ys/study/spring/studyolle/src/main/resources/static/node_modules/summernote
+567 verbose stack Error: summernote@0.8.20 postinstall: `husky install`
+567 verbose stack spawn ENOENT
+567 verbose stack     at ChildProcess.<anonymous> (/Users/supreme-ys/study/spring/studyolle/src/main/resources/static/node/node_modules/npm/lib/utils/spawn.js:17:16)
+567 verbose stack     at emitTwo (events.js:87:13)
+567 verbose stack     at ChildProcess.emit (events.js:172:7)
+567 verbose stack     at maybeClose (internal/child_process.js:829:16)
+567 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+568 verbose pkgid summernote@0.8.20
+569 verbose cwd /Users/supreme-ys/study/spring/studyolle/src/main/resources/static
+570 error Darwin 21.1.0
+571 error argv "/Users/supreme-ys/study/spring/studyolle/src/main/resources/static/node/node" "/Users/supreme-ys/study/spring/studyolle/src/main/resources/static/node/node_modules/npm/bin/npm-cli.js" "install"
+572 error node v4.6.0
+573 error npm  v2.15.9
+574 error file sh
+575 error code ELIFECYCLE
+576 error errno ENOENT
+577 error syscall spawn
+578 error summernote@0.8.20 postinstall: `husky install`
+578 error spawn ENOENT
+579 error Failed at the summernote@0.8.20 postinstall script 'husky install'.
+579 error This is most likely a problem with the summernote package,
+579 error not with npm itself.
+579 error Tell the author that this fails on your system:
+579 error     husky install
+579 error You can get information on how to open an issue for this project with:
+579 error     npm bugs summernote
+579 error Or if that isn't available, you can get their info via:
+579 error
+579 error     npm owner ls summernote
+579 error There is likely additional logging output above.
+580 verbose exit [ 1, true ]
+581 verbose unbuild node_modules/summernote
+582 info preuninstall summernote@0.8.20
+583 info uninstall summernote@0.8.20
+584 verbose unbuild rmStuff summernote@0.8.20 from /Users/supreme-ys/study/spring/studyolle/src/main/resources/static/node_modules
+585 info postuninstall summernote@0.8.20
+586 silly gentlyRm /Users/supreme-ys/study/spring/studyolle/src/main/resources/static/node_modules/summernote is being purged from base /Users/supreme-ys/study/spring/studyolle/src/main/resources/static
+587 verbose gentlyRm don't care about contents; nuking /Users/supreme-ys/study/spring/studyolle/src/main/resources/static/node_modules/summernote
+588 silly vacuum-fs purging /Users/supreme-ys/study/spring/studyolle/src/main/resources/static/node_modules/summernote
+589 silly vacuum-fs quitting because other entries in /Users/supreme-ys/study/spring/studyolle/src/main/resources/static/node_modules
