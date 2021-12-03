@@ -6,7 +6,7 @@
     <div class="alert alert-warning" role="alert" th:if="${account != null && !account?.emailVerified}">
         스터디올레 가입을 완료하려면 <a href="#" th:href="@{/check-email(email=${account.email})}" class="alert-link">계정 인증 이메일을 확인</a>하세요.
     </div>
-    <div class="container mt-4">ㅐ
+    <div class="container mt-4">
         <div class="row">
             <div class="col-md-2">
                 <h5 class="font-weight-light">관심 스터디 주제</h5>

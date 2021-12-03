@@ -25,10 +25,11 @@ public class AccountController {
         webDataBinder.addValidators(signUpFormValidator);
     }
 
+    // index.html 에서 '회원가입' 버튼 클릭하면 sign-up이 매핑되는 Controller를 찾는다.
     @GetMapping("/sign-up")
-    public String signUpForm(Model model) {
-        model.addAttribute(new SignUpForm());
-        return "account/sign-up";
+    public String signUpForm(Model model) { // SignUpForm.class에서 정의한 데이터 틀을 파라미터로 넘긴다.
+        model.addAttribute(new SignUpForm()); // 속성값으로 넣어주고
+        return "account/sign-up"; // resources/templates/account/sign-up.html 리턴.
     }
 
     @PostMapping("/sign-up")

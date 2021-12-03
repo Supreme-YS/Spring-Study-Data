@@ -40,13 +40,16 @@ public class StudyController {
         return "study/form";
     }
 
+    // th:action="@{/new-study}" 이고, post 요청에 의해 컨트롤러로 온다.
     @PostMapping("/new-study")
     public String newStudySubmit(@CurrentAccount Account account, @Valid StudyForm studyForm, Errors errors, Model model) {
+        // 에러가 있다면 다시 form 으로가고
         if (errors.hasErrors()) {
             model.addAttribute(account);
             return "study/form";
         }
 
+        // 에러가 없으면 새로운 스터디를 생성한다.
         Study newStudy = studyService.createNewStudy(modelMapper.map(studyForm, Study.class), account);
         return "redirect:/study/" + URLEncoder.encode(newStudy.getPath(), StandardCharsets.UTF_8);
     }
