@@ -38,7 +38,7 @@ public class MainController {
                     studyRepository.findFirst5ByMembersContainingAndClosedOrderByPublishedDateTimeDesc(account, false));
             return "index-after-login";
         }
-
+        /* 유저 정보가 없으면 9개를 index.html에 데이터를 뿌려준다 */
         model.addAttribute("studyList", studyRepository.findFirst9ByPublishedAndClosedOrderByPublishedDateTimeDesc(true, false));
         return "index";
     }

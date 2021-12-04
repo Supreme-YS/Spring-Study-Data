@@ -20,6 +20,7 @@ public class AccountController {
     private final AccountService accountService;
     private final AccountRepository accountRepository;
 
+    // signUpForm에서 view에서 post 방식으로 데이터가 모델에 담겨와서 InitBinder를 거쳐서 유효성을 검증한다.
     @InitBinder("signUpForm")
     public void initBinder(WebDataBinder webDataBinder) {
         webDataBinder.addValidators(signUpFormValidator);

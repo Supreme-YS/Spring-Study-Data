@@ -8,7 +8,7 @@
         <div class="py-5 text-center">
             <h2>스터디 개설</h2>
         </div>
-        <div class="row justify-content-center">
+        <div class="row justify-content-center">                               <!--newStudyForm 으로 넘어오는게 아니라 모델에 담긴 객체로 넘어온다,-->
             <form class="needs-validation col-sm-10" th:action="@{/new-study}" th:object="${studyForm}" method="post" novalidate>
                 <div class="form-group">
                     <label for="path">스터디 URL</label>
