@@ -22,6 +22,7 @@ public class StudyService {
 
     private final StudyRepository repository;
     private final ModelMapper modelMapper;
+    //
     private final ApplicationEventPublisher eventPublisher;
 
     public Study createNewStudy(Study study, Account account) {
@@ -45,8 +46,11 @@ public class StudyService {
         return study;
     }
 
+    // 스터디 설명 수정 메서드
     public void updateStudyDescription(Study study, StudyDescriptionForm studyDescriptionForm) {
+        // 수정된 정보가 담긴 studyDescriptionForm을 Study 객체에서 선언한 변수명을 key로 value 값을 수정한다.
         modelMapper.map(studyDescriptionForm, study);
+        // 수정이 반영된 study 객체와, 메시지를 생성하여 이벤트 발행
         eventPublisher.publishEvent(new StudyUpdateEvent(study, "스터디 소개를 수정했습니다."));
     }
 
