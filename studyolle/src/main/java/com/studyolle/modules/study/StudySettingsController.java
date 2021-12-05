@@ -40,10 +40,18 @@ public class StudySettingsController {
 
     @GetMapping("/description")
     public String viewStudySetting(@CurrentAccount Account account, @PathVariable String path, Model model) {
-        Study study = studyService.getStudyToUpdate(account, path);
+        Study study = studyService.getStudyToUpdate(account, path); // 서비스 로직 처리 이후, 정보가 담긴 Study study 객체를 Study study에 담고
+        // 모델에 값을 담는다~
         model.addAttribute(account);
         model.addAttribute(study);
+        // 매퍼는 왼쪽에서 오른쪽으로
+        // 즉 값이 담긴 study 객체를 StudyDescriptionForm.class에 매핑시킨다.
         model.addAttribute(modelMapper.map(study, StudyDescriptionForm.class));
+        // 여기까지 모델에 담긴 정보 요약
+        /**
+         * model
+         * data : account, study, shortDescription, fullDescription
+         */
         return "study/settings/description";
     }
 

@@ -31,14 +31,17 @@ public class StudyService {
     }
 
     public Study getStudyToUpdate(Account account, String path) {
-        Study study = this.getStudy(path);
-        checkIfManager(account, study);
-        return study;
+        Study study = this.getStudy(path); // getStudy 메서드에서 반환된 Study 객체를 참조변수 study에 담는다.
+        checkIfManager(account, study); // 매니저 체크 -> 매니저여야 스터디 생성가능한 권한임, 따라서 계정과 스터디 정보를 확인하고
+        return study; // 다시 스터디 객체 반환
     }
 
     public Study getStudy(String path) {
+        //  같은 클래스 내에 정의되어있는 StudyRepository에서 파라미터 값으로 들어온 path로 값을 찾아서 Study.class에 값으로 추가한다.
         Study study = this.repository.findByPath(path);
+        // 중복 체크 메서드 호출
         checkIfExistingStudy(path, study);
+        // Study 객체 리턴
         return study;
     }
 
