@@ -12,7 +12,7 @@
                 <div th:replace="fragments.html :: study-settings-menu(currentMenu='description')"></div>
             </div>
             <div class="col-8">
-                <div th:replace="fragments.html :: message"></div>
+                <div th:replace="fragments.html :: message"></div>       <!-- 스터디 객체에 직접 접근해서 path값 가져오기! 값은 모델에서 업데이트가 되었다.-->
                 <form class="needs-validation" th:action="@{'/study/' + ${study.getPath()} + '/settings/description'}"
                       th:object="${studyDescriptionForm}" method="post" novalidate>
                     <div class="form-group">

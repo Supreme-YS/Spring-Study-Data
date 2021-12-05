@@ -66,7 +66,8 @@ public class StudySettingsController {
             model.addAttribute(study);
             return "study/settings/description";
         }
-
+        // submit 되어 온 Post 값들이 이상이 없다면
+        // 업데이트를 수행한다. shortDescription, fullDescription
         studyService.updateStudyDescription(study, studyDescriptionForm);
         attributes.addFlashAttribute("message", "스터디 소개를 수정했습니다.");
         return "redirect:/study/" + study.getEncodedPath() + "/settings/description";

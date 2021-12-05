@@ -8,7 +8,8 @@ import javax.validation.constraints.NotBlank;
 
 @Data
 @NoArgsConstructor
-public class StudyDescriptionForm {
+public class
+StudyDescriptionForm {
 
     @NotBlank
     @Length(max = 100)
