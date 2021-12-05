@@ -28,6 +28,7 @@ public class StudyController {
     private final ModelMapper modelMapper;
     private final StudyFormValidator studyFormValidator;
 
+    // 경로에 대한 유효성 검증
     @InitBinder("studyForm")
     public void studyFormInitBinder(WebDataBinder webDataBinder) {
         webDataBinder.addValidators(studyFormValidator);
@@ -36,7 +37,7 @@ public class StudyController {
     @GetMapping("/new-study")
     public String newStudyForm(@CurrentAccount Account account, Model model) {
         model.addAttribute(account);
-        model.addAttribute(new StudyForm());
+        model.addAttribute(new StudyForm()); // 위의 newStudyForm으로 넘기는게 아니라 모델에 담긴 객체로 넘긴다.
         return "study/form";
     }
 
@@ -45,7 +46,7 @@ public class StudyController {
     public String newStudySubmit(@CurrentAccount Account account, @Valid StudyForm studyForm, Errors errors, Model model) {
         // 에러가 있다면 다시 form 으로가고
         if (errors.hasErrors()) {
-            model.addAttribute(account);
+            model.addAttribute("account", account);
             return "study/form";
         }
 

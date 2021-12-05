@@ -100,8 +100,14 @@ public class Event {
     }
 
     public void addEnrollment(Enrollment enrollment) {
+        // this = event
         this.enrollments.add(enrollment);
+        enrollment.getEvent().getId(); // 애초에 디비에 저장이 안되어서 null 값..
+        // 위에서 디비에 값이 들어갔는데, 왜 아래 코드를 또 함
+        // 관례적인 형식, 이유 : 커밋이 되기전 (쿼리를 보내기 전 상태임)
         enrollment.setEvent(this);
+        // 언젠가 알게될...
+        // 커밋되기전에 Enrollments 테이블에 사용하기 (접근하기) 위해서
     }
 
     public void removeEnrollment(Enrollment enrollment) {

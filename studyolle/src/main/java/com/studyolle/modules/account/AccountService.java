@@ -50,9 +50,9 @@ public class AccountService implements UserDetailsService {
     // 저장을 한다.
     private Account saveNewAccount(@Valid SignUpForm signUpForm) {
         signUpForm.setPassword(passwordEncoder.encode(signUpForm.getPassword()));
-        Account account = modelMapper.map(signUpForm, Account.class);
-        account.generateEmailCheckToken();
-        return accountRepository.save(account);
+        Account account = modelMapper.map(signUpForm, Account.class); // 모델매퍼가 하는게  왼쪽에서 오른쪽
+        account.generateEmailCheckToken(); // nickname, email, password , Token, At 총 5개가 account
+        return accountRepository.save(account); // repository에 jpa 기술로 저장.
     }
 
     public void sendSignUpConfirmEmail(Account newAccount) {

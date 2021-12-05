@@ -11,6 +11,7 @@ import org.springframework.validation.Validator;
 @RequiredArgsConstructor
 public class SignUpFormValidator implements Validator {
 
+    // AccountRepository에서 조회를 해야하니까
     private final AccountRepository accountRepository;
 
     @Override

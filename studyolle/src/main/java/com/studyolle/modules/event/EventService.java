@@ -15,6 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.time.LocalDateTime;
 
 @Service
+// @Transactional 메서드들이 커밋 단위가 된다
 @Transactional
 @RequiredArgsConstructor
 public class EventService {
@@ -54,6 +55,7 @@ public class EventService {
             enrollment.setAccount(account);
             event.addEnrollment(enrollment);
             enrollmentRepository.save(enrollment);
+            // 여기까지 읽으면 commit
         }
     }
 

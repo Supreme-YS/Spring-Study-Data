@@ -64,6 +64,7 @@ public class Account {
     @ManyToMany
     private Set<Zone> zones = new HashSet<>();
 
+    // 고유의 토큰을 만들기 위해서 랜덤으로 생성, 현재 시간 기준으로
     public void generateEmailCheckToken() {
         this.emailCheckToken = UUID.randomUUID().toString();
         this.emailCheckTokenGeneratedAt = LocalDateTime.now();
