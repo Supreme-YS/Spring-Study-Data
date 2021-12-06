@@ -75,11 +75,15 @@ public class StudySettingsController {
 
     // 배너 수정 로직
     @GetMapping("/banner")
-    // 배너 요청이 들어오면
+    // 배너 요청이 들어오면 현재 계정정보와 경로와 모델을 파라미터 값으로 설정해준다.
     public String studyImageForm(@CurrentAccount Account account, @PathVariable String path, Model model) {
+        // 스터디 객체에 스터디 서비스 로직의 getStudyToUpdate(account, path);로 처리된 반환값을 넣어준다
+        // getStudyToUpdate(account, path); 경로와 아이디 값을 통해 매니저 체크하고 스터디 객체로 반환하는 로직
         Study study = studyService.getStudyToUpdate(account, path);
+        // 모델에 계정과 매니저 검증된 스터디 객체를 담고
         model.addAttribute(account);
         model.addAttribute(study);
+        // banner.html로 리턴한다.
         return "study/settings/banner";
     }
 
@@ -92,10 +96,16 @@ public class StudySettingsController {
         return "redirect:/study/" + study.getEncodedPath() + "/settings/banner";
     }
 
+    // 배너 이미지 변경 요청이 들어오면
     @PostMapping("/banner/enable")
+    // 계정정보와 경로정보를 파라미터로 하여
     public String enableStudyBanner(@CurrentAccount Account account, @PathVariable String path) {
+        // 스터디 객체에 업데이트 권한을 체크한다.
         Study study = studyService.getStudyToUpdate(account, path);
+        // 스터디서비스에서 enableStudyBanner(study); 메서드를 실행시킨다.
+        // enableStudyBanner(study);는 Study.class에서 @Getter, @Setter로 정의했기 떄문에 외부에서 접근 가능!
         studyService.enableStudyBanner(study);
+        // 이후, 리 다이렉트 해준다.
         return "redirect:/study/" + study.getEncodedPath() + "/settings/banner";
     }
 

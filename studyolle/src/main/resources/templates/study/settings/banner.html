@@ -16,6 +16,8 @@
                 <div class="row">
                     <h2 class="col-sm-12">배너 이미지 사용</h2>
                 </div>
+                <!-- 모델에 담겨있는 정보 : 경로, 스터디, 계정정보 -->
+                <!-- Study.class에 선언되어있는 userBanner-->               <!--모델에 담겨있는 스터디의 경로를 가져옴-->
                 <form th:if="${!study.useBanner}" action="#" th:action="@{'/study/' + ${study.getPath()} + '/settings/banner/enable'}" method="post" novalidate>
                     <div class="alert alert-primary" role="alert">
                         스터디 메뉴에서 스터디 배너 이미지를 사용합니다. 스터디 배너 이미지를 아직 설정하지 않았다면, 기본 배너 이미지를 사용합니다.
@@ -24,6 +26,7 @@
                         <button class="btn btn-outline-primary btn-block" type="submit" aria-describedby="submitHelp">배너 이미지 사용하기</button>
                     </div>
                 </form>
+
                 <form th:if="${study.useBanner}" action="#" th:action="@{'/study/' + ${study.getPath()} + '/settings/banner/disable'}" method="post" novalidate>
                     <div class="alert alert-info" role="alert">
                         스터디 메뉴에서 스터디 배너 이미지를 사용하지 않습니다. 스터디 목록에서는 배너 이미지를 사용합니다.
