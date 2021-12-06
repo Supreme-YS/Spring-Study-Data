@@ -117,51 +117,79 @@ public class StudySettingsController {
         return "redirect:/study/" + study.getEncodedPath() + "/settings/banner";
     }
 
+    // tags 요청이 들어온다.
+    // 현재 계정정보, 경로, 모델을 파라미터로 설정한다.
     @GetMapping("/tags")
     public String studyTagsForm(@CurrentAccount Account account, @PathVariable String path, Model model)
             throws JsonProcessingException {
+        // 마찬가지로 업데이트 권한이 있는지 확인하고.
         Study study = studyService.getStudyToUpdate(account, path);
+        // 모델에 객체들을 담는다.
         model.addAttribute(account);
         model.addAttribute(study);
-
+        // Study.class에 ManyToMany로 정의해놓았다.
+        // Tags 정보들을 가져와서 stream() 메서드로 뿌리는데
+        // Tags.class에서 Tag를 key, value: 가져온 Title,를 리스트화 해서 allTagTitles에 할당
         model.addAttribute("tags", study.getTags().stream()
                 .map(Tag::getTitle).collect(Collectors.toList()));
         List<String> allTagTitles = tagRepository.findAll().stream()
                 .map(Tag::getTitle).collect(Collectors.toList());
+        // 오브젝트 매퍼라는게 있는데 whitelist라는 곳에 태그들을 스트링으로 적는다.
         model.addAttribute("whitelist", objectMapper.writeValueAsString(allTagTitles));
+        // 애후 tags.html 리턴
         return "study/settings/tags";
     }
 
+    // Post 요청이 클라어언트로부터 온다면
     @PostMapping("/tags/add")
+    // @ResponseBody 어노테이션을 사용하여 자바 객체를 HTTP의 바디 내용(객체)으로 변환하여 클라이언트로 전송한다.
     @ResponseBody
     public ResponseEntity addTag(@CurrentAccount Account account, @PathVariable String path,
+                                 // 요청 들어오면
+                                 // 서버에서는 @RequestBody 어노테이션을 사용하여
+                                 // HTTP 요청 본문에 담긴 값들을 자바 객체로 변환 시켜, 객체에 저장.
+                                 // 즉, 요청 들어오면 HTTP의 바디부를 자바로 변환시켜서 저장하기 위한 어노테이션임.
                                  @RequestBody TagForm tagForm) {
+        // 어김없이 매니저 체킹
         Study study = studyService.getStudyToUpdateTag(account, path);
+        // 태그 객체에 태그서비스에서 findOrCreateNew(tagForm.getTagTitle()); 메서드를 실행한다.
+        // 먼저 tagForm.tagTitle 값을 findOrCreateNew 메서드에 파라미터로 넘긴다.
         Tag tag = tagService.findOrCreateNew(tagForm.getTagTitle());
+        // 스터디 서비스의 addTag 메서드 호출 (파라미터 값 : study, tag)
         studyService.addTag(study, tag);
+        // 비동기식 처리 인듯하다.
         return ResponseEntity.ok().build();
     }
 
+    // 삭제요청이 왔을 때
     @PostMapping("/tags/remove")
+    // @ResponseBody는 자바객체를 http의 본문으로 변환하여 클라이언트에게 전송
     @ResponseBody
     public ResponseEntity removeTag(@CurrentAccount Account account, @PathVariable String path,
                                     @RequestBody TagForm tagForm) {
+        // 매니저 체킹
         Study study = studyService.getStudyToUpdateTag(account, path);
+        // 레파지토리에서 찾고 tag에 담는다.
         Tag tag = tagRepository.findByTitle(tagForm.getTagTitle());
+        // 저장소에 없으면 badRequest().build();
         if (tag == null) {
             return ResponseEntity.badRequest().build();
         }
-
+        // 저장소에 있으면 studyService.removeTag() 메서드 실행
+        // 파라미터 : study, tag
         studyService.removeTag(study, tag);
+        // 이후 다시 빌드!
         return ResponseEntity.ok().build();
     }
 
+    // 활동 지역 변경 요청이 들어왔을 시
     @GetMapping("/zones")
     public String studyZonesForm(@CurrentAccount Account account, @PathVariable String path, Model model)
             throws JsonProcessingException {
         Study study = studyService.getStudyToUpdate(account, path);
         model.addAttribute(account);
         model.addAttribute(study);
+        // 모
         model.addAttribute("zones", study.getZones().stream()
                 .map(Zone::toString).collect(Collectors.toList()));
         List<String> allZones = zoneRepository.findAll().stream().map(Zone::toString).collect(Collectors.toList());
