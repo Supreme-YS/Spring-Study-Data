@@ -109,6 +109,7 @@ public class StudySettingsController {
         return "redirect:/study/" + study.getEncodedPath() + "/settings/banner";
     }
 
+    // enable로직의 반대
     @PostMapping("/banner/disable")
     public String disableStudyBanner(@CurrentAccount Account account, @PathVariable String path) {
         Study study = studyService.getStudyToUpdate(account, path);
