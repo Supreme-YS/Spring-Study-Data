@@ -73,7 +73,9 @@ public class StudySettingsController {
         return "redirect:/study/" + study.getEncodedPath() + "/settings/description";
     }
 
+    // 배너 수정 로직
     @GetMapping("/banner")
+    // 배너 요청이 들어오면
     public String studyImageForm(@CurrentAccount Account account, @PathVariable String path, Model model) {
         Study study = studyService.getStudyToUpdate(account, path);
         model.addAttribute(account);
