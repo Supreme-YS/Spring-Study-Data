@@ -189,25 +189,35 @@ public class StudySettingsController {
         Study study = studyService.getStudyToUpdate(account, path);
         model.addAttribute(account);
         model.addAttribute(study);
-        // 모
+        // 모델 객체에 zones라는 이름으로 Study.class에 해쉬셋으로 정의된 zones를 스트림으로 가져온다
+        // Zone객체를 String 값으로 매핑
+        // 이후에 리스트 화 한다!
         model.addAttribute("zones", study.getZones().stream()
                 .map(Zone::toString).collect(Collectors.toList()));
+
+        // 리스트화 한 것을 레파지토리에서 찾아서 allZone에 리스트로 저장하고
         List<String> allZones = zoneRepository.findAll().stream().map(Zone::toString).collect(Collectors.toList());
+        // whitelist라는 이름으로 모델 객체에 모델 매퍼로 스트링 형식으로 담아준다.
         model.addAttribute("whitelist", objectMapper.writeValueAsString(allZones));
+        // 이후 zones.html 리턴
         return "study/settings/zones";
     }
 
+    // 지역 추가 요청이 오면
     @PostMapping("/zones/add")
     @ResponseBody
     public ResponseEntity addZone(@CurrentAccount Account account, @PathVariable String path,
                                   @RequestBody ZoneForm zoneForm) {
         Study study = studyService.getStudyToUpdateZone(account, path);
+
+        // 레파지토리에서 Zone.class의 city, province이름을 각각 넣어서 조회한 결과물을 Zone.class 객체에 담아준다.
         Zone zone = zoneRepository.findByCityAndProvince(zoneForm.getCityName(), zoneForm.getProvinceName());
         if (zone == null) {
             return ResponseEntity.badRequest().build();
         }
-
+        // 값이 있다면 서비스의 addZone 메서드 호출한다.
         studyService.addZone(study, zone);
+        // 빌드한다.
         return ResponseEntity.ok().build();
     }
 
@@ -220,7 +230,6 @@ public class StudySettingsController {
         if (zone == null) {
             return ResponseEntity.badRequest().build();
         }
-
         studyService.removeZone(study, zone);
         return ResponseEntity.ok().build();
     }
@@ -235,6 +244,7 @@ public class StudySettingsController {
 
     @PostMapping("/study/publish")
     public String publishStudy(@CurrentAccount Account account, @PathVariable String path,
+                               /// RedirectAttributes
                                RedirectAttributes attributes) {
         Study study = studyService.getStudyToUpdateStatus(account, path);
         studyService.publish(study);
@@ -283,15 +293,20 @@ public class StudySettingsController {
     public String updateStudyPath(@CurrentAccount Account account, @PathVariable String path, String newPath,
                                   Model model, RedirectAttributes attributes) {
         Study study = studyService.getStudyToUpdateStatus(account, path);
+
+        // 똑같은 값을 입력했다면, 내부는 Default : false -> true로 바뀐다.
         if (!studyService.isValidPath(newPath)) {
+            // 따라서, 기존 정보를 모델에 다시 담아서
             model.addAttribute(account);
             model.addAttribute(study);
+            // 메시지를 studyPathError에 모델에 담아서 전송한다.
             model.addAttribute("studyPathError", "해당 스터디 경로는 사용할 수 없습니다. 다른 값을 입력하세요.");
             return "study/settings/study";
         }
-
+        // 값입력이 올바르게 되었다면 서비스에서 업데이트를 set을 사용해서 해준다.
         studyService.updateStudyPath(study, newPath);
         attributes.addFlashAttribute("message", "스터디 경로를 수정했습니다.");
+        // 처리가 되면 리턴값으로 자동으로 리다이렉트 된다.
         return "redirect:/study/" + study.getEncodedPath() + "/settings/study";
     }
 

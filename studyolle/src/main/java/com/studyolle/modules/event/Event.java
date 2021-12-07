@@ -25,6 +25,7 @@ public class Event {
     private Long id;
 
     @ManyToOne
+    // study_id 를 참조 할 것 같다.
     private Study study;
 
     @ManyToOne

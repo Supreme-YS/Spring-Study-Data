@@ -17,6 +17,8 @@ import static com.studyolle.modules.study.form.StudyForm.VALID_PATH_PATTERN;
 
 @Service
 @Transactional
+// @Transactional 이 설정된 구간 내에 모델 객체에 변경이 일어나면 변경된 상태로 DB에 반영된다.
+
 @RequiredArgsConstructor
 public class StudyService {
 
@@ -147,7 +149,8 @@ public class StudyService {
         study.setPath(newPath);
     }
 
-    public boolean isValidTitle(String newTitle) {
+    public boolean
+    isValidTitle(String newTitle) {
         return newTitle.length() <= 50;
     }
 
@@ -156,7 +159,9 @@ public class StudyService {
     }
 
     public void remove(Study study) {
+        // 스터디 삭제가 가능한지 검토
         if (study.isRemovable()) {
+            // 레포지토리에서 삭제
             repository.delete(study);
         } else {
             throw new IllegalArgumentException("스터디를 삭제할 수 없습니다.");

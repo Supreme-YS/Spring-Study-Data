@@ -40,7 +40,7 @@ public class Study {
     @Lob @Basic(fetch = FetchType.EAGER)
     private String image;
 
-    @ManyToMany
+    @ManyToMany 
     private Set<Tag> tags = new HashSet<>();
 
     @ManyToMany
