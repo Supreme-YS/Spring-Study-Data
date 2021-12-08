@@ -46,6 +46,7 @@ public class Account {
     @Lob @Basic(fetch = FetchType.EAGER)
     private String profileImage;
 
+    //---------Notification 매핑용-------------//
     private boolean studyCreatedByEmail;
 
     private boolean studyCreatedByWeb = true;
@@ -57,6 +58,7 @@ public class Account {
     private boolean studyUpdatedByEmail;
 
     private boolean studyUpdatedByWeb = true;
+    //---------Notification 매핑용-------------//
 
     @ManyToMany
     private Set<Tag> tags = new HashSet<>();
