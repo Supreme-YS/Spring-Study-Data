@@ -28,6 +28,7 @@ public class BoardDto {
     }
 
     // setter 역할을 하게끔 한다. @Builder
+    // 생성자 역할을 빌더 패턴으로 한다.
     @Builder
     public BoardDto(Long id, String writer, String title, String content, LocalDateTime createdDate, LocalDateTime modifiedDate) {
         this.id = id;

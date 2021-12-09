@@ -18,9 +18,13 @@ public class BoardController {
     }
 
     @GetMapping("/")
-    public String list(Model model) {
-        List<BoardDto> boardDtoList = boardService.getBoardList();
+    public String list(Model model, @RequestParam(value = "page", defaultValue = "1") Integer pageNum) {
+        // 페이징
+        List<BoardDto> boardDtoList = boardService.getBoardList(pageNum);
+        Integer[] pageList = boardService.getPageList(pageNum);
         model.addAttribute("boardList", boardDtoList);
+        model.addAttribute("pageList", pageList);
+        // 페이징 끝
 
         return "board/list";
     }
@@ -47,14 +51,15 @@ public class BoardController {
     @GetMapping("/post/edit/{no}")
     public String edit(@PathVariable("no") Long id, Model model) {
         BoardDto boardDto = boardService.getPost(id);
-
         model.addAttribute("boardDto", boardDto);
+        System.out.println("boardDto 첫 번 째= " + boardDto);
         return "board/update";
     }
 
     // 이게 왜 PUT 요청인지 모르겠다만..
     @PostMapping("/post/edit/{no}")
     public String update(BoardDto boardDto) {
+        System.out.println("boardDto 두 번 째 = " + boardDto);
         boardService.savePost(boardDto);
         return "redirect:/";
     }
