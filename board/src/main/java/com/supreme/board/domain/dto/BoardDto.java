@@ -27,6 +27,7 @@ public class BoardDto {
         return build;
     }
 
+    // setter 역할을 하게끔 한다. @Builder
     @Builder
     public BoardDto(Long id, String writer, String title, String content, LocalDateTime createDate, LocalDateTime modifiedDate) {
         this.id = id;
