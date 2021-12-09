@@ -61,5 +61,11 @@ public class BoardController {
         boardService.savePost(boardDto);
         return "redirect:/";
     }
+
+    @PostMapping("/post/{no}")
+    public String delete(@PathVariable("no") Long id) {
+        boardService.deletePost(id);
+        return "redirect:/";
+    }
 }
 
