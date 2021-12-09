@@ -38,6 +38,7 @@
         <span th:text="${board.id}"></span>
       </td>
       <td>
+<!--        board.id로 요청을 받으니 Controller에서 no로 받아서 PathVariable하게 만든다-->
         <a th:href="@{'/post/' + ${board.id}}">
           <span th:text="${board.title}"></span>
         </a>

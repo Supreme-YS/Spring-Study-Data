@@ -14,7 +14,7 @@ public class BoardDto {
     private String writer;
     private String title;
     private String content;
-    private LocalDateTime createDate;
+    private LocalDateTime createdDate;
     private LocalDateTime modifiedDate;
 
     public Board toEntity() {
@@ -29,12 +29,12 @@ public class BoardDto {
 
     // setter 역할을 하게끔 한다. @Builder
     @Builder
-    public BoardDto(Long id, String writer, String title, String content, LocalDateTime createDate, LocalDateTime modifiedDate) {
+    public BoardDto(Long id, String writer, String title, String content, LocalDateTime createdDate, LocalDateTime modifiedDate) {
         this.id = id;
         this.writer = writer;
         this.title = title;
         this.content = content;
-        this.createDate = createDate;
+        this.createdDate = createdDate;
         this.modifiedDate = modifiedDate;
     }
 }
