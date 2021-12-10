@@ -29,12 +29,12 @@ public class Member {
 
     @Column(name = "RegDate")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private LocalDate localDate;
+    private LocalDate date;
 
     public Member(@NotNull String email,@NotNull String password, String name, LocalDate localDate) {
         this.email = email;
         this.password = password;
         this.name = name;
-        this.localDate = localDate.now();
+        this.date = localDate.now();
     }
 }

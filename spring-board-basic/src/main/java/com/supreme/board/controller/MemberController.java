@@ -4,9 +4,10 @@ import com.supreme.board.domain.entity.Member;
 import com.supreme.board.domain.entity.MemberRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.time.LocalDate;
 
 @Slf4j
 @Controller
@@ -23,7 +24,7 @@ public class MemberController {
         return "login";
     }
 
-    @PostMapping("signIn")
+    @PostMapping("/signIn")
     public String signIn(String inputEmail, String inputPassword) {
         log.info("id : {} , pw : {}", inputEmail, inputPassword);
         Member member = this.member.findMember(inputEmail, inputPassword);
@@ -32,5 +33,16 @@ public class MemberController {
         } else {
             return "loginFail";
         }
+    }
+    @RequestMapping("/signUp")
+    public String signUp() {
+        return "signUp";
+    }
+
+    @RequestMapping("/signUp/create")
+    public String create(Member member) {
+        member.setDate(LocalDate.now());
+        this.member.save(member);
+        return "redirect:/";
     }
 }
