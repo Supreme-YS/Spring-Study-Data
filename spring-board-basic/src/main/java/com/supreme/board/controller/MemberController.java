@@ -29,7 +29,8 @@ public class MemberController {
         log.info("id : {} , pw : {}", inputEmail, inputPassword);
         Member member = this.member.findMember(inputEmail, inputPassword);
         if(member != null) {
-            return "loginOK";
+            // return "loginOK";
+            return "redirect:/board";
         } else {
             return "loginFail";
         }
