@@ -17,7 +17,7 @@ public class BoardController {
         this.boardService = boardService;
     }
 
-    @GetMapping("/")
+    @GetMapping("/board")
     public String list(Model model, @RequestParam(value = "page", defaultValue = "1") Integer pageNum) {
         // 페이징
         List<BoardDto> boardDtoList = boardService.getBoardList(pageNum);
