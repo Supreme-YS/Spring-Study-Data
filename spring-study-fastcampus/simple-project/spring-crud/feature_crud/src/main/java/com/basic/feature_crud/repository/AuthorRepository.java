@@ -1,7 +1,0 @@
-package com.basic.feature_crud.repository;
-
-import com.basic.feature_crud.model.Author;
-import org.springframework.data.jpa.repository.JpaRepository;
-
-public interface AuthorRepository extends JpaRepository<Author, Long> {
-}
