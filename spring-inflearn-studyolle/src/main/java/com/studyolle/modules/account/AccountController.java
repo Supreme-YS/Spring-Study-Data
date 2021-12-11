@@ -39,6 +39,7 @@ public class AccountController {
             return "account/sign-up";
         }
 
+        // account = newAccount
         Account account = accountService.processNewAccount(signUpForm);
         accountService.login(account);
         return "redirect:/";

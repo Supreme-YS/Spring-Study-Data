@@ -75,6 +75,7 @@ public class AccountService implements UserDetailsService {
     }
 
     // 로그인한다.
+    // account = newAccount
     public void login(Account account) {
         UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(
                 new UserAccount(account),
