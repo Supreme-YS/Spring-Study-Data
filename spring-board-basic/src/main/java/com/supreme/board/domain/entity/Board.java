@@ -19,6 +19,7 @@ public class Board extends TimeEntity {
     private Long id;
 
     @Column(length = 10, nullable = false)
+
     private String writer;
 
     @Column(length = 100, nullable = false)

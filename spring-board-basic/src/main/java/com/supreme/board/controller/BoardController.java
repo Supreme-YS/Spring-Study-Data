@@ -37,7 +37,7 @@ public class BoardController {
     @PostMapping("/post")
     public String write(BoardDto boardDto) {
         boardService.savePost(boardDto);
-        return "redirect:/";
+        return "redirect:/board";
     }
 
     @GetMapping("/post/{no}")
@@ -61,13 +61,13 @@ public class BoardController {
     public String update(BoardDto boardDto) {
         System.out.println("boardDto 두 번 째 = " + boardDto);
         boardService.savePost(boardDto);
-        return "redirect:/";
+        return "redirect:/board";
     }
 
     @PostMapping("/post/{no}")
     public String delete(@PathVariable("no") Long id) {
         boardService.deletePost(id);
-        return "redirect:/";
+        return "redirect:/board";
     }
 
     @GetMapping("/board/search")
