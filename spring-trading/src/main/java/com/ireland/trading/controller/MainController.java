@@ -7,11 +7,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 @AllArgsConstructor
-public class WebController {
+public class MainController {
 
     @GetMapping("/")
     public String home() {
         return "index";
+    }
+
+    @GetMapping("admin")
+    public String admin() {
+        return "admin";
     }
 
 }
