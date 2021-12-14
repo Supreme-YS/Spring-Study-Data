@@ -26,6 +26,8 @@ dependencies {
 	runtimeOnly 'org.postgresql:postgresql'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+//	파일 처리 의존성 주입
+	implementation 'commons-io:commons-io:2.6'
 }
 
 test {
