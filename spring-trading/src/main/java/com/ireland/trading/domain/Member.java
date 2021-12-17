@@ -30,7 +30,7 @@ public class Member {
         email = request.getEmail();
         password = request.getPassword();
         name = request.getName();
-        role = Role.USER; // 회원가입하는 사용자 권한 기본 USER (임시)
+        role = Role; // 회원가입하는 사용자 권한 기본 USER (임시)
     }
 
     public void encryptPassword(PasswordEncoder passwordEncoder) {
