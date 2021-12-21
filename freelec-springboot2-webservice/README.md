@@ -1,4 +1,5 @@
 ### Version
 * Java 11
-* Gradle
+* Gradle 7.1
 * SpringBoot 2.6.1
+* Junit 4, Junit5
