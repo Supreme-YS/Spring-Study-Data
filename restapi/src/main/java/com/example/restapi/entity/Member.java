@@ -1,6 +1,5 @@
 package com.example.restapi.entity;
 
-
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Getter;
 import lombok.Setter;
@@ -22,8 +21,10 @@ public class Member {
     private String lastName;
 
     // 회원 상태를 위한 Enum
-    @Enumerated(EnumType.STRING)
-    private MemberStatus status;
+//    @Column(name = "status")
+//    @Enumerated(EnumType.STRING)
+//    private MemberStatus status;
+    private String status;
 
     // 한 명의 회원이 여러 권을 대출할 수 있다.
     @OneToMany(mappedBy = "member", fetch = FetchType.LAZY, cascade = CascadeType.ALL)

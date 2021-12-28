@@ -111,7 +111,7 @@ public class LibraryService {
         List<String> booksApprovedToBurrow = new ArrayList<>();
         list.forEach(bookLendRequest -> {
             Optional<Book> bookForId =
-                    bookRepository.findById(bookLendRequest.getBookIds().get(0));
+                    bookRepository.findById(bookLendRequest.getBookId());
             if (!bookForId.isPresent()) {
                 throw new EntityNotFoundException(
                         "Cant find any book under given ID");
@@ -125,7 +125,8 @@ public class LibraryService {
             }
 
             Member member = memberForId.get();
-            if (member.getStatus() != MemberStatus.ACTIVE) {
+//            if (member.getStatus() != MemberStatus.ACTIVE) {
+            if (member.getStatus() != "ACTIVE") {
                 throw new RuntimeException(
                         "User is not active to proceed a lending.");
             }

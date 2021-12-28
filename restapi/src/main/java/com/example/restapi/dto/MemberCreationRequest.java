@@ -6,4 +6,5 @@ import lombok.Data;
 public class MemberCreationRequest {
     private String firstName;
     private String lastName;
+    private String status;
 }
