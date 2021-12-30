@@ -23,12 +23,10 @@ public class Member {
     // 회원 상태를 위한 Enum
     @Enumerated(EnumType.STRING)
     private MemberStatus status = MemberStatus.ACTIVE;
-<<<<<<< HEAD
+
     // private MemberGrade grade = MemberGrade.NORMAL;
     // private MemberGrade grade = MemberGrade.AUTH;
     // private MemberGrade grade = MemberGrade.CONTRIBUTOR;
-=======
->>>>>>> 0e937f51eafd01322ca136098abbf8e6e14eb0de
 
     // 한 명의 회원이 여러 권을 대출할 수 있다.
     @OneToMany(mappedBy = "member", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
