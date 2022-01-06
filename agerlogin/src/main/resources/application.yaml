@@ -1,0 +1,28 @@
+#cloud:
+#  aws:
+#    s3:
+#      bucket:
+#        name: spotlive1
+#        url: https://spotlive1.s3.ap-northeast-2.amazonaws.com/
+#    credentials:
+#      accessKey: AKIAQVMLWIPB4E53HO4M
+#      secretKey: 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
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          kakao:
+            client-id: 3ea182ba51102e6bbde7dfd5fb019880
+            client-secret: thtX0ki5BCktmJuqGsU0GCd5Ayv5KabB
+
+  datasource:
+    url:
+    hikari:
+      accountname:
+      password:
+
+#      client_id = 3ea182ba51102e6bbde7dfd5fb019880
+#      redirect_uri = http://localhost:8080/login
+#      client_secret = thtX0ki5BCktmJuqGsU0GCd5Ayv5KabB
