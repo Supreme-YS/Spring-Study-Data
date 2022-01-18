@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
+import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.Map;
@@ -21,22 +22,25 @@ import org.json.simple.parser.ParseException;
 public class OembedService {
 
     /**
-     * @Method : getUrlFromProviderJson
-     * @Description : provider.json에서 url 목록을 가져온다.
-     * @throws IOException
-     * @throws ParseException
+     * @Method : getDomainName
+     * @Description : 사용자가 입력한 URL에서 도메인 값만을 추출한다.
+     * @param paramUrl
+     * @return
+     * @throws URISyntaxException
      */
-    public static void getUrlFromProviderJson() throws IOException, ParseException {
-        JSONParser parser = new JSONParser();
-        // JSON 파일 읽기
-        Reader reader = new FileReader("../resources/provider/provider.json");
-        JSONObject jsonObject = (JSONObject) parser.parse(reader);
+    private static String getDomainName(String paramUrl) throws URISyntaxException {
+        URI uri = new URI(paramUrl);
+        String domain = uri.getHost();
 
-        String providerName = (String) jsonObject.get("provider_name");
-        String url = (String) jsonObject.get("url");
-
-        System.out.println("url = " + url);
-        System.out.println("providerName = " + providerName);
+        // www로 시작하는 도메인일 경우
+        if (domain.startsWith("www.")) {
+            domain = domain.substring(4);
+        }
+        // .com으로 끝나는 도메인일 경우
+        if (domain.endsWith(".com")) {
+            domain = domain.substring(0, domain.length()-4);
+        }
+        return domain;
     }
 
     /**
