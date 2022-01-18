@@ -133,7 +133,7 @@ public class StudyService {
     }
 
     public void stopRecruit(Study study) {
-        study.stopRecruit();
+        study.stopRecru it();
         eventPublisher.publishEvent(new StudyUpdateEvent(study, "팀원 모집을 중단했습니다."));
     }
 
