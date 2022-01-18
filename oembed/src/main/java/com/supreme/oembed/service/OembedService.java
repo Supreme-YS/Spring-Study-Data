@@ -1,6 +1,7 @@
 package com.supreme.oembed.service;
 
 
+import com.sun.deploy.net.HttpResponse;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.springframework.http.HttpEntity;
@@ -22,11 +23,11 @@ import org.json.simple.parser.ParseException;
 public class OembedService {
 
     /**
-     * @Method : getDomainName
-     * @Description : 사용자가 입력한 URL에서 도메인 값만을 추출한다.
      * @param paramUrl
      * @return
      * @throws URISyntaxException
+     * @Method : getDomainName
+     * @Description : 사용자가 입력한 URL에서 도메인 값만을 추출한다.
      */
     private static String getDomainName(String paramUrl) throws URISyntaxException {
         URI uri = new URI(paramUrl);
@@ -38,16 +39,16 @@ public class OembedService {
         }
         // .com으로 끝나는 도메인일 경우
         if (domain.endsWith(".com")) {
-            domain = domain.substring(0, domain.length()-4);
+            domain = domain.substring(0, domain.length() - 4);
         }
         return domain;
     }
 
     /**
-     * @Method : embedProcess
-     * @Description : 사용자가 입력한 url에서 domain 값을 추출하여 분기한다.
      * @param paramUrl
      * @return
+     * @Method : embedProcess
+     * @Description : 사용자가 입력한 url에서 domain 값을 추출하여 분기한다.
      */
     public HttpEntity<Map<String, Object>> embedProcess(String paramUrl) {
         Map<String, Object> result = new HashMap<>();
@@ -61,7 +62,17 @@ public class OembedService {
             result.put("response", "잘못된 URL 입니다.");
             return new ResponseEntity<>(result, HttpStatus.BAD_REQUEST);
         }
-        //TODO Domain별 처리 필요
+        //TODO Domain 별 서비스 구축 필요
+        if (domain.equals("youtube")) {
+            return getYoutubeHTML(paramUrl);
+        } else if (domain.equals("twitter")) {
+            return getTwitterHTML(paramUrl);
+        } else if (domain.equals("vimeo")) {
+            return getVimeoHTML(paramUrl);
+        } else {
+            result.put("result", "Fail");
+            result.put("response", "현재 지원하지 않는 소셜이거나, 잘못된 URL 입니다.");
+            return new ResponseEntity<>(result, HttpStatus.BAD_REQUEST);
+        }
     }
-
 }
