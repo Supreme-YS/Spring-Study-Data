@@ -28,31 +28,6 @@ public class ProviderResponseService {
 
     private static ProviderService providerService;
 
-    /**
-     * @Method : getUrlFromProviderJson
-     * @Description : provider.json에서 url 목록을 가져온다.
-     * @throws IOException
-     * @throws ParseException
-     */
-    public static String getUrlFromProviderJson(String provider) throws IOException, ParseException {
-        JSONParser parser = new JSONParser();
-        // JSON 파일 읽기
-        Reader reader = new FileReader("provider/provider.json");
-        JSONObject jsonObject = (JSONObject) parser.parse(reader);
-
-        JSONArray providerArr = (JSONArray) jsonObject.get("provider_name");
-        String url = "";
-
-        for (int i=0; i < providerArr.size(); i++) {
-            if (providerArr.get(i).equals(provider)) {
-                url = (String) jsonObject.get("url");
-            }
-        }
-        System.out.println("url = " + url);
-
-        return url;
-    }
-
     public HttpEntity<Map<String, Object>> getYoutubeHtml(String paramUrl) {
         Map<String, Object> embedResult;
         Map<String, Object> result = new HashMap<>();
@@ -68,8 +43,7 @@ public class ProviderResponseService {
         embedResult = template.getForObject(YOUTUBE + paramUrl, Map.class);
 
         result.put("result", "success");
-        result.put("response", embedResult.get("html"));
-
+        result.put("response", embedResult);
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
@@ -84,13 +58,11 @@ public class ProviderResponseService {
             return new ResponseEntity<>(result, HttpStatus.BAD_REQUEST);
         }
 
-        // API 요청
         RestTemplate template = new RestTemplate();
         embedResult = template.getForObject(TWITTER + paramUrl, Map.class);
 
         result.put("result", "success");
-        result.put("response", embedResult.get("html"));
-
+        result.put("response", embedResult);
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
@@ -105,13 +77,10 @@ public class ProviderResponseService {
             return new ResponseEntity<>(result, HttpStatus.BAD_REQUEST);
         }
 
-        // API 요청
         RestTemplate template = new RestTemplate();
         embedResult = template.getForObject(VIMEO + paramUrl, Map.class);
-        System.out.println(embedResult);
         result.put("result", "success");
-        result.put("response", embedResult.get("html"));
-
+        result.put("response", embedResult);
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 }
