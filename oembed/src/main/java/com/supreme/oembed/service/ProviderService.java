@@ -1,5 +1,7 @@
 package com.supreme.oembed.service;
 
+import lombok.Data;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -11,11 +13,12 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
 
-@Service
-@RequiredArgsConstructor
+@Getter
+@Data
 public class ProviderService {
 
-    private final String YOUTUBE;
+    public String YOUTUBE;
+
     {
         try {
             YOUTUBE = getUrlFromProviderJson("YouTube");
@@ -26,7 +29,7 @@ public class ProviderService {
         }
     }
 
-    private final String TWITTER;
+    public String TWITTER;
 
     {
         try {
@@ -38,7 +41,7 @@ public class ProviderService {
         }
     }
 
-    private final String VIMEO;
+    public String VIMEO;
 
     {
         try {
@@ -59,7 +62,7 @@ public class ProviderService {
     public static String getUrlFromProviderJson(String provider) throws IOException, ParseException {
         JSONParser parser = new JSONParser();
         // JSON 파일 읽기
-        Reader reader = new FileReader("../resources/provider/provider.json");
+        Reader reader = new FileReader("provider/provider.json");
         JSONObject jsonObject = (JSONObject) parser.parse(reader);
 
         JSONArray providerArr = (JSONArray) jsonObject.get("provider_name");

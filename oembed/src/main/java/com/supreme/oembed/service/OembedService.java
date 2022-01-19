@@ -1,17 +1,11 @@
 package com.supreme.oembed.service;
 
-
-import com.sun.deploy.net.HttpResponse;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.Reader;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.HashMap;
@@ -22,6 +16,8 @@ import org.json.simple.parser.ParseException;
 @Service
 public class OembedService {
 
+    @Autowired
+    private ProviderResponseService providerResponseService;
     /**
      * @param paramUrl
      * @return
@@ -64,11 +60,11 @@ public class OembedService {
         }
         //TODO Domain 별 서비스 구축 필요
         if (domain.equals("youtube")) {
-            return getYoutubeHTML(paramUrl);
+            return providerResponseService.getYoutubeHtml(paramUrl);
         } else if (domain.equals("twitter")) {
-            return getTwitterHTML(paramUrl);
+            return providerResponseService.getTwitterHTML(paramUrl);
         } else if (domain.equals("vimeo")) {
-            return getVimeoHTML(paramUrl);
+            return providerResponseService.getVimeoHTML(paramUrl);
         } else {
             result.put("result", "Fail");
             result.put("response", "현재 지원하지 않는 소셜이거나, 잘못된 URL 입니다.");

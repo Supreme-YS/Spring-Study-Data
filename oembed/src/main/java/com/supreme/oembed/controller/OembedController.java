@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
 
-@RestController(value = "api")
+@RestController
 public class OembedController {
 
     @Autowired
     OembedService oembedService;
 
-    @GetMapping("oembed")
+    @GetMapping("/api/oembed")
     public HttpEntity<Map<String, Object>> urlEmbed(@RequestParam(value = "url") String url) {
         return oembedService.embedProcess(url);
     }
