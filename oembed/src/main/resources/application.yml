@@ -4,3 +4,13 @@ spring:
     prefix: classpath:/templates/
     suffix: .html
     check-template-location: true
+
+provider:
+  youtube:
+    url: "https://www.youtube.com/oembed?url="
+
+  twitter:
+    url: "https://publish.twitter.com/oembed?url="
+
+  vimeo:
+    url: "https://vimeo.com/api/oembed.json?url="

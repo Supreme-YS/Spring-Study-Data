@@ -1,11 +1,7 @@
 package com.supreme.oembed.service;
 
-
 import lombok.extern.slf4j.Slf4j;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,12 +15,21 @@ import java.util.regex.Pattern;
 @Service
 @Slf4j
 public class ProviderResponseService {
-    private static String YOUTUBE = "https://www.youtube.com/oembed?url=";
-    private static String TWITTER = "https://publish.twitter.com/oembed?url=";
-    private static String VIMEO = "https://vimeo.com/api/oembed.json?url=";
+    @Value("${provider.youtube.url}")
+    private String YOUTUBE;
 
-    private static ProviderService providerService;
+    @Value("${provider.twitter.url}")
+    private String TWITTER;
 
+    @Value("${provider.vimeo.url}")
+    private String VIMEO;
+
+    /**
+     * @param paramUrl
+     * @return
+     * @Method : getYoutubeObject
+     * @Description : paramUrl이 youtube링크일 때 oembed 결과를 반환한다.
+     */
     public HttpEntity<Map<String, Object>> getYoutubeObject(String paramUrl) {
         Map<String, Object> embedResult;
         Map<String, Object> result = new HashMap<>();
@@ -44,6 +49,12 @@ public class ProviderResponseService {
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
+    /**
+     * @param paramUrl
+     * @return
+     * @Method : getTwitterObject
+     * @Description : paramUrl이 twitter링크일 때 oembed 결과를 반환한다.
+     */
     public HttpEntity<Map<String, Object>> getTwitterObject(String paramUrl) {
         Map<String, Object> embedResult;
         Map<String, Object> result = new HashMap<>();
@@ -63,6 +74,12 @@ public class ProviderResponseService {
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
+    /**
+     * @param paramUrl
+     * @return
+     * @Method : getYoutubeObject
+     * @Description : paramUrl이 vimeo링크일 때 oembed 결과를 반환한다.
+     */
     public HttpEntity<Map<String, Object>> getVimeoObject(String paramUrl) {
         Map<String, Object> embedResult;
         Map<String, Object> result = new HashMap<>();
@@ -76,6 +93,7 @@ public class ProviderResponseService {
 
         RestTemplate template = new RestTemplate();
         embedResult = template.getForObject(VIMEO + paramUrl, Map.class);
+
         result.put("result", "success");
         result.put("response", embedResult);
         return new ResponseEntity<>(result, HttpStatus.OK);

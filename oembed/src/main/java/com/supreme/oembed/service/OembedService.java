@@ -17,6 +17,7 @@ public class OembedService {
 
     @Autowired
     private ProviderResponseService providerResponseService;
+
     /**
      * @param paramUrl
      * @return
@@ -43,7 +44,7 @@ public class OembedService {
      * @param paramUrl
      * @return
      * @Method : embedProcess
-     * @Description : 사용자가 입력한 url에서 domain 값을 추출하여 분기한다.
+     * @Description : 사용자가 입력한 url에서 domain 값을 추출하여 분기후, API 응답 객체를 반환한다.
      */
     public HttpEntity<Map<String, Object>> embedProcess(String paramUrl) {
         Map<String, Object> result = new HashMap<>();
@@ -57,7 +58,7 @@ public class OembedService {
             result.put("response", "잘못된 URL 입니다.");
             return new ResponseEntity<>(result, HttpStatus.BAD_REQUEST);
         }
-        //TODO Domain 별 서비스 구축 필요
+
         if (domain.equals("youtube")) {
             return providerResponseService.getYoutubeObject(paramUrl);
         } else if (domain.equals("twitter")) {
