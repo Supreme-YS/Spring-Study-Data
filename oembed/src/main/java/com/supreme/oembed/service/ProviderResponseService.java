@@ -12,9 +12,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.Reader;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
@@ -28,7 +25,7 @@ public class ProviderResponseService {
 
     private static ProviderService providerService;
 
-    public HttpEntity<Map<String, Object>> getYoutubeHtml(String paramUrl) {
+    public HttpEntity<Map<String, Object>> getYoutubeObject(String paramUrl) {
         Map<String, Object> embedResult;
         Map<String, Object> result = new HashMap<>();
 
@@ -47,7 +44,7 @@ public class ProviderResponseService {
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
-    public HttpEntity<Map<String, Object>> getTwitterHTML(String paramUrl) {
+    public HttpEntity<Map<String, Object>> getTwitterObject(String paramUrl) {
         Map<String, Object> embedResult;
         Map<String, Object> result = new HashMap<>();
 
@@ -66,7 +63,7 @@ public class ProviderResponseService {
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
-    public HttpEntity<Map<String, Object>> getVimeoHTML(String paramUrl) {
+    public HttpEntity<Map<String, Object>> getVimeoObject(String paramUrl) {
         Map<String, Object> embedResult;
         Map<String, Object> result = new HashMap<>();
 

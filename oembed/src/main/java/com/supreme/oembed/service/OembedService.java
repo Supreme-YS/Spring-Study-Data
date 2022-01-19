@@ -11,7 +11,6 @@ import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.json.simple.parser.ParseException;
 
 @Service
 public class OembedService {
@@ -60,11 +59,11 @@ public class OembedService {
         }
         //TODO Domain 별 서비스 구축 필요
         if (domain.equals("youtube")) {
-            return providerResponseService.getYoutubeHtml(paramUrl);
+            return providerResponseService.getYoutubeObject(paramUrl);
         } else if (domain.equals("twitter")) {
-            return providerResponseService.getTwitterHTML(paramUrl);
+            return providerResponseService.getTwitterObject(paramUrl);
         } else if (domain.equals("vimeo")) {
-            return providerResponseService.getVimeoHTML(paramUrl);
+            return providerResponseService.getVimeoObject(paramUrl);
         } else {
             result.put("result", "Fail");
             result.put("response", "현재 지원하지 않는 소셜이거나, 잘못된 URL 입니다.");
