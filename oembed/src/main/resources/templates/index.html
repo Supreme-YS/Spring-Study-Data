@@ -1,13 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="kr">
 <head>
     <meta charset="UTF-8">
     <title>Oembed Test</title>
 </head>
-<body>
-<form name="urlInput" action="api/oembed" method="get">
-    <input type="url" name="url">
-    <input type="submit" value="확인">
-</form>
+<body id="body">
+<h1>OEmbed Test</h1>
+<label for="url"></label><input type="text" id="url">
+<button id="getOembed" type="button">확인</button>
+<div class="container-fluid">
+    <table id="test" class="table table-striped">
+        <tbody id="oembedResult">
+        </tbody>
+    </table>
+</div>
 </body>
+<script src="js/oembed.js"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </html>
+
+
+
+
+
+<!--<form name="urlInput" action="api/oembed" method="get">-->
+
+<!--    <input type="submit" value="확인">-->
+<!--</form>-->
+<!--</body>-->
+<!--</html>-->

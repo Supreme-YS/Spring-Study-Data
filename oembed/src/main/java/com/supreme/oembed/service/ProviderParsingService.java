@@ -1,6 +1,5 @@
 package com.supreme.oembed.service;
 
-import lombok.Data;
 import lombok.Getter;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;

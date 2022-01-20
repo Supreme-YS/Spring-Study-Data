@@ -2,7 +2,6 @@ package com.supreme.oembed.service;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -24,13 +23,17 @@ public class ProviderResponseService {
     @Value("${provider.vimeo.url}")
     private String VIMEO;
 
+    @Value("${provider.instagram.url}")
+    private String INSTAGRAM;
+
+
     /**
      * @param paramUrl
      * @return
      * @Method : getYoutubeObject
      * @Description : paramUrl이 youtube링크일 때 oembed 결과를 반환한다.
      */
-    public HttpEntity<Map<String, Object>> getYoutubeObject(String paramUrl) {
+    public ResponseEntity<Map<String, Object>> getYoutubeObject(String paramUrl) {
         Map<String, Object> embedResult;
         Map<String, Object> result = new HashMap<>();
 
@@ -46,7 +49,8 @@ public class ProviderResponseService {
 
         result.put("result", "success");
         result.put("response", embedResult);
-        return new ResponseEntity<>(result, HttpStatus.OK);
+        System.out.println(result);
+        return new ResponseEntity<>(embedResult, HttpStatus.OK);
     }
 
     /**
@@ -55,7 +59,7 @@ public class ProviderResponseService {
      * @Method : getTwitterObject
      * @Description : paramUrl이 twitter링크일 때 oembed 결과를 반환한다.
      */
-    public HttpEntity<Map<String, Object>> getTwitterObject(String paramUrl) {
+    public ResponseEntity<Map<String, Object>> getTwitterObject(String paramUrl) {
         Map<String, Object> embedResult;
         Map<String, Object> result = new HashMap<>();
 
@@ -71,7 +75,8 @@ public class ProviderResponseService {
 
         result.put("result", "success");
         result.put("response", embedResult);
-        return new ResponseEntity<>(result, HttpStatus.OK);
+        System.out.println(result);
+        return new ResponseEntity<>(embedResult, HttpStatus.OK);
     }
 
     /**
@@ -80,7 +85,7 @@ public class ProviderResponseService {
      * @Method : getYoutubeObject
      * @Description : paramUrl이 vimeo링크일 때 oembed 결과를 반환한다.
      */
-    public HttpEntity<Map<String, Object>> getVimeoObject(String paramUrl) {
+    public ResponseEntity<Map<String, Object>> getVimeoObject(String paramUrl) {
         Map<String, Object> embedResult;
         Map<String, Object> result = new HashMap<>();
 
@@ -96,6 +101,7 @@ public class ProviderResponseService {
 
         result.put("result", "success");
         result.put("response", embedResult);
-        return new ResponseEntity<>(result, HttpStatus.OK);
+        System.out.println(result);
+        return new ResponseEntity<>(embedResult, HttpStatus.OK);
     }
 }

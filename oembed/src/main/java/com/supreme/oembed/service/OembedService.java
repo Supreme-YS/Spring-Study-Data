@@ -67,6 +67,8 @@ public class OembedService {
             return providerResponseService.getVimeoObject(paramUrl);
         } else {
             result.put("result", "Fail");
+            //TODO : Instagram(meta)은 토큰 발급이 필요.
+            //FIXME : 지인 아이디를 통해 인증을 요청했으나 실패.
             result.put("response", "현재 지원하지 않는 소셜이거나, 잘못된 URL 입니다.");
             return new ResponseEntity<>(result, HttpStatus.BAD_REQUEST);
         }

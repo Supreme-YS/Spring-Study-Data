@@ -14,3 +14,10 @@ provider:
 
   vimeo:
     url: "https://vimeo.com/api/oembed.json?url="
+
+  instagram:
+    url: "https://graph.facebook.com/v10.0/instagram_oembed?url="
+
+oembed:
+  instagram:
+    accessToken: "Fail to Receive accessToken"
