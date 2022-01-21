@@ -11,7 +11,6 @@ import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.Map;
 
-
 @Service
 public class OembedService {
 
