@@ -19,8 +19,4 @@ class MemberServiceTest {
         Assertions.assertThat(member).isEqualTo(findMember);
                 
     }
-
-    @Test
-    void findMember() {
-    }
 }
