@@ -1,5 +1,6 @@
 package com.kmong.backend.modules.account;
 
+import com.kmong.backend.modules.account.dto.AccountRes;
 import com.kmong.backend.modules.order.Orders;
 import com.sun.istack.NotNull;
 import lombok.*;
@@ -23,20 +24,7 @@ public class Account {
     @NotNull
     private String password;
 
-//    @Enumerated(EnumType.STRING)
-//    private AccountRole accountRole;
-
     @OneToMany(mappedBy = "account")
     List<Orders> orders = new ArrayList<>();
 
-//    public Account(Long id, String email, String password) {
-//        this.id = id;
-//        this.email = email;
-//        this.password = password;
-//    }
-
-    //    public void addAccount(Account updateAccount) {
-//        updateAccount.getProducts().add(this);
-//        this.setAccount(updateAccount);
-//    }
 }
