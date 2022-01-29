@@ -22,11 +22,11 @@ class AccountServiceTest {
     @Test
     void signUp() {
         //given
-        Account account = new Account(1L, "dudtjr1225@gmail.com", "testpassword");
+        Account account = new Account(1L, "dudtjr1225@gmail.com", "testpassword", AccountRole.ROLE_USER) ;
         //when
         Account newAccount = accountService.signUp(account);
         //then
-        Assertions.assertThat(newAccount.getId()).isEqualTo(1L);
+        Assertions.assertThat(newAccount.getAccountRole()).isEqualTo(AccountRole.ROLE_USER);
     }
 
     @Test
@@ -35,7 +35,7 @@ class AccountServiceTest {
         String email = "dudtjr1225@gmail.com";
         String password = "testpassword";
 
-        Account account = new Account(1L, "dudtjr1225@gmail.com", "testpassword");
+        Account account = new Account(1L, "dudtjr1225@gmail.com", "testpassword", AccountRole.ROLE_USER);
         //when
         accountService.signUp(account);
         String encodedPassword = accountRepository.findByEmail(email).getPassword();

@@ -21,8 +21,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.cors().disable()
                 .csrf().disable()
-                .formLogin().disable()
                 .headers().frameOptions().disable();
+
+        httpSecurity.authorizeRequests()
+                .anyRequest().authenticated()
+                .and().formLogin()
+                .loginProcessingUrl("/api/login")
+                .usernameParameter("email")
+                .passwordParameter("password")
+                .permitAll()
+                .and()
+                .logout()
+                .permitAll();
     }
 
 }

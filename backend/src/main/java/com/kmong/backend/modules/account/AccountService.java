@@ -19,12 +19,11 @@ public class AccountService {
     public Account signUp(Account account) {
         String encodedPassword = passwordEncoder.encode(account.getPassword());
         account.setPassword(encodedPassword);
+        account.setAccountRole(AccountRole.ROLE_USER);
         return accountRepository.save(account);
     }
 
-    public Optional<Account> findById(Long accountId) {
-        return accountRepository.findById(accountId);
-    }
+
 
     public boolean validationLogin(String email, String password) {
         Account loginAccount = accountRepository.findByEmail(email);
@@ -36,5 +35,9 @@ public class AccountService {
             return false;
         }
         return true;
+    }
+
+    public Optional<Account> findById(Long accountId) {
+        return accountRepository.findById(accountId);
     }
 }
