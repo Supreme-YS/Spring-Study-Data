@@ -1,6 +1,5 @@
 package com.kmong.backend.modules.account;
 
-import com.kmong.backend.modules.account.dto.AccountRes;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -17,11 +16,10 @@ public class AccountService {
     private final AccountRepository accountRepository;
     private final PasswordEncoder passwordEncoder;
 
-    public AccountRes signUp(Account newAccount) {
-        String encodedPassword = passwordEncoder.encode(newAccount.getPassword());
-        newAccount.setPassword(encodedPassword);
-        accountRepository.save(newAccount);
-        return AccountRes.toAccountRes(newAccount);
+    public Account signUp(Account account) {
+        String encodedPassword = passwordEncoder.encode(account.getPassword());
+        account.setPassword(encodedPassword);
+        return accountRepository.save(account);
     }
 
     public boolean validationLogin(String email, String password) {

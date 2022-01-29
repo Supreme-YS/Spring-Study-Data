@@ -39,7 +39,7 @@ class ProductServiceTest {
 
         //then
         Product newProduct = productService.addProduct(product);
-        Optional<Product> newProductById = productRepository.findById(newProduct.getId());
-        Assertions.assertThat(newProduct.getProductName()).isEqualTo(newProductById.get().getProductName());
+        Product productById = productService.findProductById(newProduct.getId());
+        Assertions.assertThat(newProduct.getProductName()).isEqualTo(productById.getProductName());
     }
 }

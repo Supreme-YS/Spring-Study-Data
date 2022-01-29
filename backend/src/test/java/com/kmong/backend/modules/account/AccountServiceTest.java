@@ -1,8 +1,6 @@
 package com.kmong.backend.modules.account;
 
-import com.kmong.backend.modules.account.dto.AccountRes;
 import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -24,15 +22,15 @@ class AccountServiceTest {
     @Test
     void signUp() {
         //given
-        Account newAccount = new Account();
-        newAccount.setId(1L);
-        newAccount.setEmail("dudtjr1225@gmail.com");
-        newAccount.setPassword("testpw");
+        Account account = new Account();
+        account.setId(1L);
+        account.setEmail("dudtjr1225@gmail.com");
+        account.setPassword("testpw");
         //when
-        AccountRes accountRes = accountService.signUp(newAccount);
-        Account byEmail = accountRepository.findByEmail(accountRes.getEmail());
+        Account newAccount = accountService.signUp(account);
+        Account newAccountByEmail = accountRepository.findByEmail(account.getEmail());
         //then
-        Assertions.assertThat(byEmail.getEmail()).isEqualTo("dudtjr1225@gmail.com");
+        Assertions.assertThat(newAccountByEmail.getEmail()).isEqualTo("dudtjr1225@gmail.com");
     }
 
     @Test
