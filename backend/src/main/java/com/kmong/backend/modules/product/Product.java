@@ -1,6 +1,6 @@
 package com.kmong.backend.modules.product;
 
-import com.kmong.backend.modules.order.Order;
+import com.kmong.backend.modules.order.Orders;
 import com.sun.istack.NotNull;
 import lombok.*;
 
@@ -16,7 +16,6 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "product_id")
     private Long id;
 
     @NotNull
@@ -26,5 +25,5 @@ public class Product {
     private String productPrice;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    private Order order;
+    private Orders order;
 }

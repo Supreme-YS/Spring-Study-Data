@@ -1,6 +1,8 @@
 package com.kmong.backend.modules.account;
 
+import com.kmong.backend.modules.account.dto.AccountRes;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -22,20 +24,25 @@ class AccountServiceTest {
     @Test
     void signUp() {
         //given
-        Account account = new Account(1L, "dudtjr1225@gmail.com", "testpassword", AccountRole.ROLE_USER) ;
+        Account newAccount = new Account();
+        newAccount.setId(1L);
+        newAccount.setEmail("dudtjr1225@gmail.com");
+        newAccount.setPassword("testpw");
         //when
-        Account newAccount = accountService.signUp(account);
+        AccountRes accountRes = accountService.signUp(newAccount);
+        Account byEmail = accountRepository.findByEmail(accountRes.getEmail());
         //then
-        Assertions.assertThat(newAccount.getAccountRole()).isEqualTo(AccountRole.ROLE_USER);
+        Assertions.assertThat(byEmail.getEmail()).isEqualTo("dudtjr1225@gmail.com");
     }
 
     @Test
     void validationLogin() {
         //given
+        Account account = new Account();
         String email = "dudtjr1225@gmail.com";
-        String password = "testpassword";
-
-        Account account = new Account(1L, "dudtjr1225@gmail.com", "testpassword", AccountRole.ROLE_USER);
+        String password = "testpw";
+        account.setEmail("dudtjr1225@gmail.com");
+        account.setPassword("testpw");
         //when
         accountService.signUp(account);
         String encodedPassword = accountRepository.findByEmail(email).getPassword();
