@@ -28,7 +28,7 @@ class ProductServiceTest {
         account.setId(1L);
         account.setEmail("dudtjr1225@gmail.com");
         account.setPassword("testpw");
-        accountService.signUp(account);
+        Account newAccount = accountService.signUp(account);
 
         //when
         Product product = new Product();
@@ -38,7 +38,7 @@ class ProductServiceTest {
         product.setAccount(account);
 
         //then
-        Product newProduct = productService.addProduct(product);
+        Product newProduct = productService.addProduct(newAccount, product);
         Product productById = productService.findProductById(newProduct.getId());
         Assertions.assertThat(newProduct.getProductName()).isEqualTo(productById.getProductName());
     }
@@ -50,7 +50,7 @@ class ProductServiceTest {
         account.setId(1L);
         account.setEmail("dudtjr1225@gmail.com");
         account.setPassword("testpw");
-        accountService.signUp(account);
+        Account newAccount = accountService.signUp(account);
 
         //when
         Product product = new Product();
@@ -58,10 +58,10 @@ class ProductServiceTest {
         product.setProductName("첫 번째 상품");
         product.setProductPrice("1000");
         product.setAccount(account);
-        Product newProduct = productService.addProduct(product);
+        Product newProduct = productService.addProduct(newAccount, product);
 
         //then
-        productService.deleteProductById(newProduct.getId());
+        productService.deleteProductById(newAccount, newProduct.getId());
         Optional<Product> id = productRepository.findById(1L);
         Assertions.assertThat(id).isEmpty();
     }

@@ -6,6 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import javax.swing.text.html.Option;
+
+import java.util.Optional;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 
@@ -28,9 +32,9 @@ class AccountServiceTest {
         account.setPassword("testpw");
         //when
         Account newAccount = accountService.signUp(account);
-        Account newAccountByEmail = accountRepository.findByEmail(account.getEmail());
+        Optional<Account> newAccountByEmail = accountService.findById(account.getId());
         //then
-        Assertions.assertThat(newAccountByEmail.getEmail()).isEqualTo("dudtjr1225@gmail.com");
+        Assertions.assertThat(newAccountByEmail.get().getEmail()).isEqualTo("dudtjr1225@gmail.com");
     }
 
     @Test
@@ -43,7 +47,7 @@ class AccountServiceTest {
         account.setPassword("testpw");
         //when
         accountService.signUp(account);
-        String encodedPassword = accountRepository.findByEmail(email).getPassword();
+        String encodedPassword = accountRepository.findByEmail(email).get().getEmail();
 
         //then
         assertAll(
