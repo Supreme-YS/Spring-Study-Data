@@ -26,6 +26,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        http.csrf().disable();
+
         http.authorizeRequests()
                 // 페이지 권한 설정
 //                .antMatchers("/admin/**").hasRole("ROLE_ADMIN")
@@ -33,12 +35,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/api/**").permitAll()
                 .and() // 로그인 설정
                 .formLogin()
-                .loginPage("/api/login")
+                .loginPage("/api/account/login")
                 .defaultSuccessUrl("/api/login/result")
                 .permitAll()
                 .and() // 로그아웃 설정
                 .logout()
-                .logoutRequestMatcher(new AntPathRequestMatcher("/api/logout"))
+                .logoutRequestMatcher(new AntPathRequestMatcher("/api/account/logout"))
                 .logoutSuccessUrl("/api/logout/result")
                 .invalidateHttpSession(true)
                 .and()
