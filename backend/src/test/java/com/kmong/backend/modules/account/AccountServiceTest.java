@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import javax.swing.text.html.Option;
 
+import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -54,5 +54,42 @@ class AccountServiceTest {
                 () -> assertNotEquals(password, encodedPassword),
                 () -> assertTrue(passwordEncoder.matches(password, encodedPassword))
         );
+    }
+
+    @Test
+    void findAllAccount() {
+        //given
+        Account account1 = new Account();
+        account1.setId(1L);
+        account1.setEmail("dudtjr1225@gmail.com");
+        account1.setPassword("testpw");
+        Account newAccount1 = accountService.signUp(account1);
+
+        Account account2 = new Account();
+        account2.setId(2L);
+        account2.setEmail("dudtjr1225@test.com");
+        account2.setPassword("testpw");
+        Account newAccount2 = accountService.signUp(account2);
+
+        //when
+        List<Account> allAccount = accountService.findAllAccount();
+
+        //then
+        Assertions.assertThat(allAccount.size()).isEqualTo(2);
+    }
+
+    @Test
+    void findById() {
+        //given
+        Account account = new Account();
+        account.setId(1L);
+        account.setEmail("dudtjr1225@gmail.com");
+        account.setPassword("testpw");
+        Account newAccount = accountService.signUp(account);
+
+        //when
+        Optional<Account> accountById = accountService.findById(newAccount.getId());
+        //then
+        Assertions.assertThat(accountById).isNotEmpty();
     }
 }
