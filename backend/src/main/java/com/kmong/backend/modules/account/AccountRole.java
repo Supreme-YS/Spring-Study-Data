@@ -1,5 +1,9 @@
 package com.kmong.backend.modules.account;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@Getter
 public enum AccountRole {
 
     ROLE_USER("사용자"),

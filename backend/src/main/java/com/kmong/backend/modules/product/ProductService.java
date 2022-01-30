@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Service
 @Transactional
@@ -14,6 +15,10 @@ public class ProductService {
 
     public Product addProduct(Product product) {
         return productRepository.save(product);
+    }
+
+    public List<Product> allProducts(Product product) {
+        return productRepository.findAll();
     }
 
     public Product findProductById(Long id) {
