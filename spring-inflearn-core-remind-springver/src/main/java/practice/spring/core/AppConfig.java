@@ -1,7 +1,8 @@
 package practice.spring.core;
 
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import practice.spring.core.discount.DiscountPolicy;
-import practice.spring.core.discount.FixDiscountPolicy;
 import practice.spring.core.discount.RateDiscountPolicy;
 import practice.spring.core.member.MemberRepository;
 import practice.spring.core.member.MemberService;
@@ -11,14 +12,18 @@ import practice.spring.core.order.OrderService;
 import practice.spring.core.order.OrderServiceImpl;
 
 /**
- * 구현 객체를 생성하고, 연결하는 책임을 담당하는 AppConfig
+ * @Configuration : 설정을 구성한다는 뜻의 어노테이션
+ * @Bean : 스프링 컨테이너에 빈(bean)으로 등록한다.
  */
+@Configuration
 public class AppConfig {
 
+    @Bean
     public MemberService memberService() {
         return new MemberServiceImpl(memberRepository());
     }
 
+    @Bean
     public OrderService orderService() {
         return new OrderServiceImpl(
                 memberRepository(),
@@ -26,10 +31,12 @@ public class AppConfig {
         );
     }
 
+    @Bean
     public MemberRepository memberRepository() {
         return new MemoryMemberRepository();
     }
 
+    @Bean
     public DiscountPolicy discountPolicy() {
         // 만약에 정액할인정책이 아니라 정률로만 바꾸고 싶다면?
         // return new FixDiscountPolicy();
