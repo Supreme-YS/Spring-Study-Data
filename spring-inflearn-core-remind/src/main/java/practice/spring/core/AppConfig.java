@@ -10,6 +10,9 @@ import practice.spring.core.member.MemoryMemberRepository;
 import practice.spring.core.order.OrderService;
 import practice.spring.core.order.OrderServiceImpl;
 
+/**
+ * 구현 객체를 생성하고, 연결하는 책임을 담당하는 AppConfig
+ */
 public class AppConfig {
 
     public MemberService memberService() {
