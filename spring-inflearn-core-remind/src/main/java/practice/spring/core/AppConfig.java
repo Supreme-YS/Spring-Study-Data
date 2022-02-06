@@ -2,6 +2,7 @@ package practice.spring.core;
 
 import practice.spring.core.discount.DiscountPolicy;
 import practice.spring.core.discount.FixDiscountPolicy;
+import practice.spring.core.discount.RateDiscountPolicy;
 import practice.spring.core.member.MemberRepository;
 import practice.spring.core.member.MemberService;
 import practice.spring.core.member.MemberServiceImpl;
@@ -27,6 +28,9 @@ public class AppConfig {
     }
 
     public DiscountPolicy discountPolicy() {
-        return new FixDiscountPolicy();
+        // 만약에 정액할인정책이 아니라 정률로만 바꾸고 싶다면?
+        // return new FixDiscountPolicy();
+        // 이런식으로 "구성 영역"에서 바꿔만 주면 된다.
+        return new RateDiscountPolicy();
     }
 }
